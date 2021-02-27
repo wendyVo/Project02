@@ -15,14 +15,5 @@ module.exports = (sequelize, DataTypes) => {
         },
       }
     });
-    //Table table with Menu Table connect "many to many"
-    Table.associate = function(models) {
-        Table.belongsToMany(models.Menu, {
-          through: 'TableMenus',
-          as: 'menus',
-          foreignKey: 'tableId',
-          otherKey: 'menuId'
-        });
-      };
     return Table;
   };
