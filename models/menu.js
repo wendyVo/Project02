@@ -17,5 +17,14 @@ odule.exports = (sequelize, DataTypes) => {
       otherKey: 'ingredientId'
     });
   };
+  //Menu table with Table Table connect "many to many"
+  Menu.associate = function(models) {
+    Menu.belongsToMany(models.Table, {
+      through: 'TableMenus',
+      as: 'tables',
+      foreignKey: 'menuId',
+      otherKey: 'tableId'
+    });
+  };
   return Menu;
 };
