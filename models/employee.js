@@ -15,14 +15,5 @@ module.exports = (sequelize, DataTypes) => {
       },
     }
   });
-  //Ingredient table with Menu Table connect "many to many"
-  Ingredient.associate = function(models) {
-    Ingredient.belongsToMany(models.Menu, {
-      through: 'IngredientMenus',
-      as: 'menus',
-      foreignKey: 'ingredientId',
-      otherKey: 'menuId'
-    });
-  };
   return Ingredient;
 };
