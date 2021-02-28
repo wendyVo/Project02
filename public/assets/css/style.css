@@ -1,4 +1,44 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+body {
+  color: #000;
+}
+
+article {
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+  top: 50px;
+  bottom: 50px;
+  text-align: center;
+  line-height: 100%;
+}
+
+.navbar {
+  background-color: #eee;
+}
+
+.fas {
+  color: #000;
+}
+
+.signOut {
+  float: right;
+}
+
+.tables {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+footer {
+  position: absolute !important;
+  bottom: 0px;
+  min-width: 100%;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 0px !important;
+  border-bottom-width: 0px !important;
+}
+
+.navbar-text {
+  float: none;
 }
