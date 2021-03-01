@@ -1,0 +1,27 @@
+As a Manager I want to be able to add a new employee and asign a four digit pin
+As a User I want to input my pin to access my part of the app
+As a Manager I want to see which employee is logged in 
+As Manager I want to see in which section my employee works
+As a Waiter I want to see which tables are available
+As a Waiter when I click on a table I can pick items from the menu to add to the order
+As a Waiter I want to send the order to the kitchen
+As a Chef I want to see the new orders
+As a Chef I want to let the Waiter know when the order is ready for pick up
+As a Waiter I want to see the table change color when the order is ready
+As a Waiter I want to be able to know the cost of the meal per table
+
+
+Technologies:
+socketio - package
+websockets
+
+
+Future development:
+As a Chef when I receive an order I know exactly what I need to produce it - kitchen staff
+As a User I want to organise my staff shifts - manager
+As a Manager I want to calculate my payroll
+
+
+
+
+
