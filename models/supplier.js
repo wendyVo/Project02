@@ -1,5 +1,10 @@
 odule.exports = (sequelize, DataTypes) => {
   const Supplier = sequelize.define('Supplier', {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     name: {
       type: DataTypes.TEXT,
       allowNull: false,

@@ -1,6 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     const Dish = sequelize.define('Dish', {
-      title: {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        title: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {

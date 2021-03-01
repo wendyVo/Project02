@@ -1,5 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
   const Table = sequelize.define('Table', {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     num_customers: {
       type: DataTypes.INTEGER,
       allowNull: false,

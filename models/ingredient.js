@@ -1,5 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
   const Ingredient = sequelize.define('Ingredient', {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     name: {
       type: DataTypes.TEXT,
       allowNull: false,
