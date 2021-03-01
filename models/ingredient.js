@@ -18,6 +18,13 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [1],
       },
+    },
+    minimun_quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
     }
   });
   //Ingredient table with Dish Table connect "many to many"
