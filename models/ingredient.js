@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
         len: [1],
       },
     },
-    supplier: {
-      type: DataTypes.TEXT,
+    quantity: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         len: [1],
@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
   });
   //Ingredient table with Menu Table connect "many to many"
   Ingredient.associate = function(models) {
-    Ingredient.belongsToMany(models.Menu, {
-      through: 'IngredientMenus',
-      as: 'menus',
+    Ingredient.belongsToMany(models.Dish, {
+      through: 'IngredientDishes',
+      as: 'dishes',
       foreignKey: 'ingredientId',
-      otherKey: 'menuId'
+      otherKey: 'dishId'
     });
   };
   return Ingredient;
