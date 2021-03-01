@@ -1,14 +1,22 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
+    "password": null,
+=======
     "password": "password",
+>>>>>>> 7316f621cc8d449055b8e1b3a5c0c461728ed647
     "database": "restaurant_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
+    "password": null,
+=======
     "password": "password",
+>>>>>>> 7316f621cc8d449055b8e1b3a5c0c461728ed647
     "database": "restaurant_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

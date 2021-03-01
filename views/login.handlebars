@@ -1,7 +1,24 @@
 <article>
-    <div class="login">
-        login goes here
+    <div class="container login">
+        <div class="pinBox">
+            <div class="pincode-input-container">
+                <div style="display: none;">
+                    <input type="number" pattern="[0-9]*" inputmode="numeric" id="preventautofill" autocomplete="off"
+                        class="pincode-input-text-masked">
+                </div>
+                <input type="test" maxlength="1" autocomplete="off" placeholder="•"
+                    class="form-control pincode-input-text pincode-input-text-masked first";>
+                <input type="text" maxlength="1" autocomplete="off" placeholder="•"
+                    class="form-control pincode-input-text pincode-input-text-masked mid";>
+                <input type="text" maxlength="1" autocomplete="off" placeholder="•"
+                    class="form-control pincode-input-text pincode-input-text-masked mid";>
+                <input type="text" maxlength="1" autocomplete="off" placeholder="•"
+                    class="form-control pincode-input-text pincode-input-text-masked last";>
+            </div>
+            <div class="text-danger pincode-input-error"></div><input type="text" id="pincode-input5"
+                style="display: none;">
+        </div>
     </div>
 </article>
 
-<script type="text/javascript" src="/assets/js/kitchen.js"></script>
+<script type="text/javascript" src="/assets/js/login.js"></script>
