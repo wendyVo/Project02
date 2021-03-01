@@ -47,6 +47,7 @@ footer {
 .tables-layout, .menu {
   background-color: gray;
 }
+
 /* Login.html css */
 .container {
   height: 100%;
@@ -76,4 +77,5 @@ footer {
 .pincode-input-text-masked {
   font-family: "Roboto", sans-serif;
   font-size: xx-large;
+
 }
