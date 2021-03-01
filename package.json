@@ -15,11 +15,13 @@
     "license": "ISC",
     "dependencies": {
         "bcryptjs": "2.4.3",
+        "dayjs": "^1.10.4",
         "express": "^4.17.0",
         "express-handlebars": "^5.2.1",
         "express-session": "^1.16.1",
+        "moment": "^2.29.1",
         "mysql2": "^1.6.5",
-        "passport": "^0.4.0",
+        "passport": "^0.4.1",
         "passport-local": "^1.0.0",
         "sequelize": "^5.8.6"
     },
