@@ -42,3 +42,7 @@ footer {
 .navbar-text {
   float: none;
 }
+
+.tables-layout, .menu {
+  background-color: gray;
+}
