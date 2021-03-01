@@ -15,13 +15,22 @@ module.exports = (sequelize, DataTypes) => {
       },
     }
   });
-  //Ingredient table with Menu Table connect "many to many"
+  //Ingredient table with Dish Table connect "many to many"
   Ingredient.associate = function(models) {
     Ingredient.belongsToMany(models.Dish, {
       through: 'IngredientDishes',
       as: 'dishes',
       foreignKey: 'ingredientId',
       otherKey: 'dishId'
+    });
+  };
+  //Ingredient table with Supplier Table connect "many to many"
+  Ingredient.associate = function(models) {
+    Ingredient.belongsToMany(models.Supplier, {
+      through: 'IngredientSuppliers',
+      as: 'suppliers',
+      foreignKey: 'ingredientId',
+      otherKey: 'supplierId'
     });
   };
   return Ingredient;

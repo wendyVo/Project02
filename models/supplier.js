@@ -18,7 +18,7 @@ odule.exports = (sequelize, DataTypes) => {
   //Supplier table with  Ingredient Table connect "many to many"
   Supplier.associate = function(models) {
     Supplier.belongsToMany(models.Ingredient, {
-      through: 'SupplierIngredients',
+      through: 'IngredientSuppliers',
       as: 'ingredients',
       foreignKey: 'supplierId',
       otherKey: 'ingredientId'
