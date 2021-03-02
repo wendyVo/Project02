@@ -3,7 +3,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 /* Styles shared through all app */
-article {
+.article {
   position: absolute;
   height: 100%;
   min-width: 100%;
@@ -44,12 +44,8 @@ footer {
   float: none;
 }
 
-.tables-layout, .menu {
-  background-color: gray;
-}
-
 /* Login.html css */
-.container {
+.containerLogin {
   height: 100%;
   padding: 15%;
   text-align: center;
@@ -78,4 +74,13 @@ footer {
   font-family: "Roboto", sans-serif;
   font-size: xx-large;
 
+}
+
+/* Waiters page css*/
+.tablesLayout, .menu {
+  background-color: gray;
+}
+
+.tableBtn {
+  margin: 5%;
 }
