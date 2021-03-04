@@ -15,6 +15,7 @@ body {
 
 .navbar {
   background-color: #eee;
+  margin-bottom: 0;
 }
 
 .fas {
@@ -44,15 +45,25 @@ footer {
   float: none;
 }
 
-
 /* Login.html css */
+.login {
+  background-image: url("../img/minimaRes.png");
+  /* opacity: 80%; */
+  background-repeat:no-repeat;
+  background-size: 100%;
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+  top: 50px;
+}
+
 .containerLogin {
   height: 100%;
+  opacity: 100%;
   padding: 15%;
   text-align: center;
   display: block;
 }
-
 
 .pinBox {
   display: inline-block;
@@ -86,7 +97,7 @@ footer {
   font-family: "Roboto", sans-serif;
   border-style: none;
   margin-top: 20px;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 14px;
   border: 1px solid #e7e7e7;
   border-radius: 4px;
@@ -99,7 +110,8 @@ footer {
 }
 
 /* Waiters page css*/
-.tablesLayout, .menu {
+.tablesLayout,
+.menu {
   background-color: gray;
 }
 

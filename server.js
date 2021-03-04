@@ -1,7 +1,6 @@
 const express = require("express");
 
 const PORT = process.env.PORT || 8080;
-
 const db = require("./models");
 
 const app = express();
@@ -20,13 +19,16 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-const routes = require("./routes/routes.js");
+const routes = require("./routes/routes");
+// const apiRoutes = require("./routes/api-routes.js");
 app.use(routes);
+// apiRoutes(app);
+// routes(app);
 
 // Start our server so that it can begin listening to client requests.
-
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
+    // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT);
   });
 });
