@@ -58,14 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        console.log(data[0].pinNumber);
         console.log(pinNumber.join(""));
-        // eslint-disable-next-line eqeqeq
-        if (data[0].pinNumber == pinNumber.join("")) {
-          console.log("Log this employee in please");
-          window.location.replace(`/${data[0].position}s`);
-        } else {
+        if (data.length === 0) {
           window.location.replace("/");
+        } else {
+          if (data[0].pinNumber === Number(pinNumber.join(""))) {
+            console.log("Log this employee in please");
+            window.location.replace(`/${data[0].position}s`);
+          }
         }
       });
   };

@@ -12,4 +12,10 @@ document.addEventListener("DOMContentLoaded", event => {
     e.preventDefault();
     window.location.replace("/");
   });
+
+  const homeBtn = document.getElementById("home");
+  homeBtn.addEventListener("click", e => {
+    e.preventDefault();
+    window.location.replace("/");
+  });
 });

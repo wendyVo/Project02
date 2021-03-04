@@ -5,11 +5,17 @@ const db = require("../models");
 app.get("/api/login/:pinNumber", (req, res) => {
   db.Employee.findAll({
     where: {
-      pinNumber: req.params.pinNumber
-    }
-  }).then(response => res.json(response));
-  console.log("api login route");
-  return;
+      pinNumber: req.params.pinNumber,
+    },
+  })
+    .then((response) => {
+      console.log(response);
+      return res.json(response);
+    })
+    .catch((err) => {
+      console.log(err);
+      return res.json(err);
+    });
 });
 
 app.get("/", (req, res) => {
