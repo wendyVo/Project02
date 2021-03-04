@@ -2,6 +2,38 @@
     <div class="supplies-list">
         Supplies to buy
     </div>
+     <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-4 ingedientList">
+                <h3>IN STOCK</h3>
+                <ul class="list-group">
+            {{#each supplies}}
+        <li class="list-group-item" data-id="{{id}}"> {{name}}</li>
+            {{/each}}
+</ul>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <h3>LOW STOCK</h3>
+                <ul class="list-group">
+  {{#each supplies}}
+        <li class="list-group-item" data-id="{{id}}"> {{name}}</li>
+        <li class="list-group-item" data-id="{{id}}"> {{quantity}}</li>
+            {{/each}}
+</ul>
+            </div>
+
+            <div class="col-6 col-md-4">
+                <h3>QUANTITY TO REORDER</h3>
+                <ul class="list-group">
+  <li class="list-group-item">An item</li>
+  <li class="list-group-item">A second item</li>
+  <li class="list-group-item">A third item</li>
+  <li class="list-group-item">A fourth item</li>
+  <li class="list-group-item">And a fifth one</li>
+</ul>
+            </div>
+        </div>
 </article>
 
 <script type="text/javascript" src="assets/js/supplies.js"></script>
