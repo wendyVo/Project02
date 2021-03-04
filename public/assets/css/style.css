@@ -79,8 +79,36 @@ footer {
 /* Waiters page css*/
 .tablesLayout, .menu {
   background-color: gray;
+  height: 100%;
+}
+
+.actualTables {
+position: relative;
+margin-left: 25%;
 }
 
 .tableBtn {
   margin: 5%;
+  font-family: "Roboto", sans-serif;
+  background-color: #eee;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
+}
+
+.tableBtn:hover {
+  margin: 5%;
+  background-color: lightgrey;
+}
+
+.tableBtn:active {
+  margin: 5%;
+  background-color: darkgray;
+}
+
+.tableBtn:focus {
+  margin: 5%;
+  background-color: darkgray;
 }
