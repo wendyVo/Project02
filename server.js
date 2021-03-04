@@ -22,7 +22,8 @@ app.set("view engine", "handlebars");
 const routes = require("./routes/routes");
 // const apiRoutes = require("./routes/api-routes.js");
 app.use(routes);
-// app.use(apiRoutes);
+// apiRoutes(app);
+// routes(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {

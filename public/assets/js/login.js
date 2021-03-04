@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           if (data[0].pinNumber === Number(pinNumber.join(""))) {
             console.log("Log this employee in please");
-            window.location.replace(`/${data[0].position}s`);
+            window.location.replace(`/${data[0].position}`);
           }
         }
       });
