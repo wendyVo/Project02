@@ -113,8 +113,49 @@ footer {
 .tablesLayout,
 .menu {
   background-color: gray;
+  height: 100%;
+}
+
+.tablesLayout {
+  position: relative;
+  right: 15px;
+}
+
+.actualTables {
+position: relative;
+margin-left: 30%;
+margin-top: 40%;
+margin-bottom: 60%;
 }
 
 .tableBtn {
   margin: 5%;
+  font-family: "Roboto", sans-serif;
+  background-color: #eee;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
+}
+
+.tableBtn:hover {
+  margin: 5%;
+  background-color: lightgrey;
+}
+
+.tableBtn:active {
+  margin: 5%;
+  background-color:grey;
+}
+
+.tableBtn:focus {
+  margin: 5%;
+  background-color: grey;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 100%;
+  margin-top: 25%;
 }
