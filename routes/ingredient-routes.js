@@ -1,14 +1,12 @@
 const db = require("../models");
-// const { Op } = require("sequelize");
-const Op = Sequelize.Op;
+const sequelize = require("sequelize");
 
 module.exports = app => {
   // get the ingredients where are greater minimun quantity
   app.get("/api/ingredients", (req, res) => {
     db.Ingredient.findAll({
       where: {
-        quantity: { $gt: sequelize.col('minimumQuantity') } // > 20
-        // quantity: { [Op.gt]: sequelize.col('minimumQuantity') } // > 20
+        quantity: { [sequelize.Op.gt]: sequelize.col("minimumQuantity") }
       }
     })
       .then(response => {
@@ -24,7 +22,7 @@ module.exports = app => {
   app.get("/api/ingredient", (req, res) => {
     db.Ingredient.findAll({
       where: {
-        quantity: { [Op.lte]: 20 } // < = 20
+        quantity: { [sequelize.Op.lte]: sequelize.col("minimumQuantity") }
       }
     }).then(data => res.json(data));
   });
