@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // Call the functions to store the pin and login the user to the correct page
     storePinNumber();
-    loginUser();
+    loginUser(pinNumber.join(""));
     console.log(pinNumber);
   });
 
@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Function to send the user to the correct employee page depending on their position
-  const loginUser = () => {
+  const loginUser = pin => {
     console.log("Get loginUser is getting called");
-    fetch("/api/login", {
+    fetch(`/api/login/${pin}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"

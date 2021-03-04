@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const db = require("../models");
 
-app.get("/api/login", (req, res) => {
+app.get("/api/login/:pinNumber", (req, res) => {
   db.Employee.findAll({
     where: {
-      pinNumber: 1111
+      pinNumber: req.params.pinNumber
     }
   }).then(response => res.json(response));
   console.log("api login route");
