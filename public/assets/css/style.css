@@ -47,8 +47,9 @@ footer {
 
 /* Login.html css */
 .login {
-  /* background-image: url("../img/Purist-Restaurant-Design.jpg"); */
+  background-image: url("../img/minimaRes.png");
   /* opacity: 80%; */
+  background-repeat:no-repeat;
   background-size: 100%;
   position: absolute;
   height: 100%;
