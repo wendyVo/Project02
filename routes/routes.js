@@ -5,14 +5,14 @@ const db = require("../models");
 app.get("/api/login/:pinNumber", (req, res) => {
   db.Employee.findAll({
     where: {
-      pinNumber: req.params.pinNumber,
-    },
+      pinNumber: req.params.pinNumber
+    }
   })
-    .then((response) => {
+    .then(response => {
       console.log(response);
       return res.json(response);
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       return res.json(err);
     });
