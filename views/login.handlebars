@@ -1,24 +1,19 @@
-<article>
-    <div class="container login containerLogin">
-        <div class="pinBox">
-            <div class="pincode-input-container">
-                <div style="display: none;">
-                    <input type="number" pattern="[0-9]*" inputmode="numeric" id="preventautofill" autocomplete="off"
-                        class="pincode-input-text-masked">
-                </div>
-                <input type="test" maxlength="1" autocomplete="off" placeholder="•"
-                    class="form-control pincode-input-text pincode-input-text-masked first";>
-                <input type="text" maxlength="1" autocomplete="off" placeholder="•"
-                    class="form-control pincode-input-text pincode-input-text-masked mid";>
-                <input type="text" maxlength="1" autocomplete="off" placeholder="•"
-                    class="form-control pincode-input-text pincode-input-text-masked mid";>
-                <input type="text" maxlength="1" autocomplete="off" placeholder="•"
-                    class="form-control pincode-input-text pincode-input-text-masked last";>
-            </div>
-            <div class="text-danger pincode-input-error"></div><input type="text" id="pincode-input5"
-                style="display: none;">
+<article class="login">
+    <div class="container containerLogin">
+    <div class="pinBox">
+        <div class="pincode-input-container">
+            <input type="text" pattern="[0-9] " maxlength="1" autocomplete="off" placeholder="•"
+                class="form-control pincode-input-text pincode-input-text-masked" id="first">
+            <input type="text" maxlength="1" autocomplete="off" placeholder="•"
+                class="form-control pincode-input-text pincode-input-text-masked" id="mid1">
+            <input type="text" maxlength="1" autocomplete="off" placeholder="•"
+                class="form-control pincode-input-text pincode-input-text-masked" id="mid2">
+            <input type="text" maxlength="1" autocomplete="off" placeholder="•"
+                class="form-control pincode-input-text pincode-input-text-masked" id="last">
         </div>
+        <button class="btn btn-primary" id="pinSubmit" type="submit">Submit</button>
     </div>
+</div>
 </article>
 
 <script type="text/javascript" src="/assets/js/login.js"></script>

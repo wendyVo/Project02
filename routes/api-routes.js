@@ -1,17 +1,14 @@
 // Requiring our models and passport as we've configured it
+// const passport = require("../config/passport");
+
 const db = require("../models");
-const passport = require("../config/passport");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), (req, res) => {
-    // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
-      email: req.user.email,
-      id: req.user.id
-    });
+  app.get("/waiters", (req, res) => {
+    res.render("waiters");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to

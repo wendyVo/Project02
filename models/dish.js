@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Dish = sequelize.define("Dish", {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
@@ -38,5 +38,5 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "IngredientId"
     });
   };
-  return Table;
+  return Dish;
 };

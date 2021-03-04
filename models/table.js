@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Table = sequelize.define("Table", {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },

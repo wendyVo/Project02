@@ -1,7 +1,7 @@
-odule.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Supplier = sequelize.define("Supplier", {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },

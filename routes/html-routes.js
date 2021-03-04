@@ -5,6 +5,11 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
+  app.get("/api/login", (req, res) => {
+    // db.Employee.findAll({}).then(data => res.json(data));
+    res.console.log("I am the login route");
+  });
+
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {

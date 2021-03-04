@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   const Employee = sequelize.define("Employee", {
     // Giving the Employee model a name of type STRING
     employeeId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     managerId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: true,
       validate: {
         isNumeric: true
