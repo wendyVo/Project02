@@ -1,5 +1,16 @@
 const express = require("express");
 const app = express();
+const db = require("../models");
+
+app.get("/api/login", (req, res) => {
+  db.Employee.findAll({
+    where: {
+      pinNumber: 1111
+    }
+  }).then(response => res.json(response));
+  console.log("api login route");
+  return;
+});
 
 app.get("/", (req, res) => {
   res.render("login");
@@ -16,6 +27,7 @@ app.get("/kitchen", (req, res) => {
 app.get("/supplies", (req, res) => {
   res.render("supplies");
 });
+
 app.get("/roster", (req, res) => {
   res.render("roster");
 });
