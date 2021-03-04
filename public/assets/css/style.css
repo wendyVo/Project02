@@ -4,7 +4,7 @@ body {
 }
 
 /* Styles shared through all app */
-article {
+.article {
   position: absolute;
   height: 100%;
   min-width: 100%;
@@ -44,12 +44,15 @@ footer {
   float: none;
 }
 
-.tables-layout,
-.menu {
-  background-color: gray;
-}
 
 /* Login.html css */
+.containerLogin {
+  height: 100%;
+  padding: 15%;
+  text-align: center;
+  display: block;
+}
+
 
 .pinBox {
   display: inline-block;
@@ -93,4 +96,13 @@ footer {
 #pinSubmit:hover {
   color: white !important;
   background-color: #000;
+}
+
+/* Waiters page css*/
+.tablesLayout, .menu {
+  background-color: gray;
+}
+
+.tableBtn {
+  margin: 5%;
 }
