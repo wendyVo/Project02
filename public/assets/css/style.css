@@ -6,13 +6,11 @@ body {
 
 /* Styles shared through all app */
 article {
-  background-image: url("../img/minimaRes.png");
-  background-repeat:no-repeat;
-  background-size: 100%;
+  background: url("../img/oldSchoolResOpa80.png") no-repeat center fixed;
+  background-size: cover;
   position: absolute;
   height: 100%;
   min-width: 100%;
-  top: 50px;
   text-align: center;
   line-height: 100%;
   margin-bottom: 50px;
@@ -49,28 +47,17 @@ footer {
 
 .navbar-text {
   margin: auto;
-  color:#000  !important;
-
+  color: #000 !important;
 }
 
 /* Login.html css */
-.login {
-  background-image: url("../img/minimaRes.png");
-  /* opacity: 80%; */
-  background-repeat:no-repeat;
-  background-size: 100%;
-  position: absolute;
-  height: 100%;
-  min-width: 100%;
-  top: 50px;
-}
-
 .containerLogin {
   height: 100%;
   opacity: 100%;
   padding: auto;
   text-align: center;
   display: block;
+  place-items: center center;
 }
 
 .pinBox {
@@ -80,7 +67,11 @@ footer {
   margin: auto;
   height: 100%;
   padding: 20%;
-  text-align: center;
+  /* text-align: center; */
+}
+
+.pincodeCenter {
+ 
 }
 
 .pincode-input-text,
@@ -149,8 +140,8 @@ h1 {
   right: 15px;
 }
 
-.tables{
- padding: 40px;
+.tables {
+  padding: 40px;
 }
 
 .grid {
@@ -162,10 +153,9 @@ h1 {
 
 .grid > div {
   height: 100px;
-  background: #CACAC4;
+  background: #cacac4;
   min-width: 10px;
   border-radius: 4px;
-
 }
 
 .tableBtn {
@@ -186,7 +176,7 @@ h1 {
 
 .tableBtn:active {
   margin: 5%;
-  background-color:grey;
+  background-color: grey;
 }
 
 .tableBtn:focus {
@@ -198,7 +188,7 @@ h5 {
   float: left;
   margin-left: 42px;
 }
-.waiterList{
+.waiterList {
   list-style: none;
 }
 .card {
@@ -206,4 +196,3 @@ h5 {
   margin-bottom: 100%;
   margin-top: auto;
 }
-
