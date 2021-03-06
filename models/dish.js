@@ -1,7 +1,8 @@
+var Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   const Dish = sequelize.define("Dish", {
     id: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
