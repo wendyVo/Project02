@@ -1,16 +1,19 @@
 body {
   color: #000;
   font-family: "Roboto", sans-serif;
+  padding-bottom: 50px;
 }
 
 /* Styles shared through all app */
-.article {
+article {
+  background: url("../img/oldSchoolResOpa80.png") no-repeat center fixed;
+  background-size: cover;
   position: absolute;
   height: 100%;
   min-width: 100%;
-  top: 50px;
   text-align: center;
   line-height: 100%;
+  margin-bottom: 50px;
 }
 
 .navbar {
@@ -39,30 +42,22 @@ footer {
   line-height: 50px;
   margin-bottom: 0px !important;
   border-bottom-width: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 .navbar-text {
-  float: none;
+  margin: auto;
+  color: #000 !important;
 }
 
 /* Login.html css */
-.login {
-  background-image: url("../img/minimaRes.png");
-  /* opacity: 80%; */
-  background-repeat:no-repeat;
-  background-size: 100%;
-  position: absolute;
-  height: 100%;
-  min-width: 100%;
-  top: 50px;
-}
-
 .containerLogin {
   height: 100%;
   opacity: 100%;
-  padding: 15%;
+  padding: auto;
   text-align: center;
   display: block;
+  place-items: center center;
 }
 
 .pinBox {
@@ -71,8 +66,8 @@ footer {
   position: relative;
   margin: auto;
   height: 100%;
-  padding: 15%;
-  text-align: center;
+  padding: 20%;
+  /* text-align: center; */
 }
 
 .pincode-input-text,
@@ -110,10 +105,30 @@ footer {
 }
 
 /* Waiters page css*/
+
+.containerWaiter {
+  height: 100%;
+  padding: auto;
+  text-align: center;
+  display: block;
+  padding: 20px;
+}
+
+.waiterRow {
+  min-height: 80%;
+  max-height: 80%;
+  max-width: 80%;
+  margin: auto;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
 .tablesLayout,
 .menu {
-  background-color: gray;
-  height: 100%;
+  background-color: #eee;
+  margin-top: 40px;
 }
 
 .tablesLayout {
@@ -121,15 +136,26 @@ footer {
   right: 15px;
 }
 
-.actualTables {
-position: relative;
-margin-left: 30%;
-margin-top: 40%;
-margin-bottom: 60%;
+.tables {
+  padding: 40px;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: column;
+  margin: 0 0 2rem 0;
+}
+
+.grid > div {
+  height: 100px;
+  background: #cacac4;
+  min-width: 10px;
+  border-radius: 4px;
 }
 
 .tableBtn {
-  margin: 5%;
+  margin-top: 5%;
   font-family: "Roboto", sans-serif;
   background-color: #eee;
   color: black;
@@ -146,7 +172,7 @@ margin-bottom: 60%;
 
 .tableBtn:active {
   margin: 5%;
-  background-color:grey;
+  background-color: grey;
 }
 
 .tableBtn:focus {
@@ -154,8 +180,15 @@ margin-bottom: 60%;
   background-color: grey;
 }
 
+h5 {
+  float: left;
+  margin-left: 42px;
+}
+.waiterList {
+  list-style: none;
+}
 .card {
   position: relative;
   margin-bottom: 100%;
-  margin-top: 25%;
+  margin-top: auto;
 }

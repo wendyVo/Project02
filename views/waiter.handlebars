@@ -1,28 +1,47 @@
 <article>
     <div class="container containerWaiter">
-        <div class="row">
+        <div class="row waiterRow">
             <div class="col-md-6 tablesLayout">
                 <h1>Tables</h1>
                 <div class="actualTables">
-                    <button type="button" class="btn btn-primary tableBtn tbl1">1</button>
-                    <button type="button" class="btn btn-primary tableBtn tbl2">2</button>
-                    <button type="button" class="btn btn-primary tableBtn tbl3">3</button>
-                    <br>
-                    <button type="button" class="btn btn-primary tableBtn tbl4">4</button>
-                    <button type="button" class="btn btn-primary tableBtn tbl5">5</button>
-                    <button type="button" class="btn btn-primary tableBtn tbl6">6</button>
+                    <div class="tables">
+                        <div class="grid">
+                            <div><button type="button" class="btn btn-primary tableBtn tbl1">1</button></div>
+                            <div> <button type="button" class="btn btn-primary tableBtn tbl2">2</button>
+                            </div>
+                            <div><button type="button" class="btn btn-primary tableBtn tbl3">3</button></div>
+                        </div>
+                        <div class="grid">
+                            <div><button type="button" class="btn btn-primary tableBtn tbl4">4</button></div>
+                            <div><button type="button" class="btn btn-primary tableBtn tbl5">5</button></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Order for table: {{tableNumber}}</h5>
+                        <ul class="waiterList">
+                            <li></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-    
-            
+
+
             <div class="col-md-6 menu">
                 <h1>Menu</h1>
-                <div class="card">testing</div>
+                {{!-- <div class="card"> --}}
+                    <div>
+                        <ul class="waiterList">
+                            {{#each dish}}
+                            <li class="list-group-item" data-id="{{id}}"> {{name}} {{price}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>   
-        
-        
+    </div>
+
+
 </article>
 
 
