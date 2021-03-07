@@ -200,6 +200,11 @@ h5 {
   border-left: none;
   border-right: none;
 }
+
+.dish:hover {
+  font-weight: bolder;
+}
+
 /* Manager Page CSS */
 
 p {
