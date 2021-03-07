@@ -22,7 +22,7 @@ module.exports = app => {
     res.render("ingredients");
   });
 
-  app.get("/manager", (req, res) => {
-    res.render("manager");
-  });
+  // app.get("/manager", (req, res) => {
+  //   res.render("manager");
+  // });
 };
