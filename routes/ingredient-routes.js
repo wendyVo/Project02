@@ -27,4 +27,13 @@ module.exports = app => {
   app.get("/ingredients", (req, res) => {
     res.render("ingredients", { inStock, lowStock });
   });
+
+  // app.put("/api/ingredients/:id", (req, res) => {
+  //   db.Ingredient.update(
+  //     { quantinty: 50 },
+  //     {
+  //       where: { id: req.params.id }
+  //   }).then(function (record) {
+  //     res.sendStatus(200);
+  // });
 };

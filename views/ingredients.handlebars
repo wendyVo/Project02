@@ -8,7 +8,9 @@
                 <h3>IN STOCK</h3>
                 <ul class="list-group">
                     {{#each inStock }}
-                        <li  class="list-group-item">{{name}}</li>
+                        <li  class="list-group-item" data-id="{{id}}">{{name}}</li>
+                        {{else}}
+                            <p class="list-group-item">Nothing in Stock!</p>
                     {{/each}}
                 </ul>
             </div>
@@ -16,20 +18,21 @@
                 <h3>LOW STOCK</h3>
                 <ul class="list-group">
                     {{#each lowStock}}
-                        <li class="list-group-item">{{name}}</li>
+                        <li class="list-group-item" data-id="{{id}}">
+                            {{name}}
+                            <button class="orderButton"data-id="{{id}}">ORDER</button>
+                        </li>
+                        {{else}}
+                            <p class="list-group-item">Nothing low Stock!</p>
                     {{/each}}
                 </ul>
             </div>
-            <div class="col-6 col-md-4">
+            {{!-- <div class="col-6 col-md-4">
                 <h3>QUANTITY TO REORDER</h3>
                 <ul class="list-group">
                     <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
 </article>
 

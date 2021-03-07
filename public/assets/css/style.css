@@ -200,6 +200,13 @@ h5 {
   border-left: none;
   border-right: none;
 }
+/* Ingredients Page CSS */
+.orderButton {
+  float: right;
+  background-color: rgb(170, 167, 167);
+  border-radius: 5px;
+}
+
 /* Manager Page CSS */
 
 p {
