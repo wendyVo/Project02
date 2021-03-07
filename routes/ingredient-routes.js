@@ -13,6 +13,7 @@ module.exports = app => {
   }).then(data => {
     inStock = data;
   });
+
   // get the ingredients where are less or equal from the minimun quantity
   db.Ingredient.findAll({
     where: {
@@ -21,19 +22,23 @@ module.exports = app => {
   }).then(data => {
     lowStock = data;
   });
-  console.log(`inStock: ${inStock} 
-  lowStock: ${lowStock}`);
 
   app.get("/ingredients", (req, res) => {
     res.render("ingredients", { inStock, lowStock });
   });
 
-  // app.put("/api/ingredients/:id", (req, res) => {
-  //   db.Ingredient.update(
-  //     { quantinty: 50 },
-  //     {
-  //       where: { id: req.params.id }
-  //   }).then(function (record) {
-  //     res.sendStatus(200);
-  // });
+  app.put("/api/ingredients/:id", (req, res) => {
+    db.Ingredient.update(
+      { quantinty: 50 },
+      {
+        where: { id: req.params.id }
+      }
+    )
+      .then(record => {
+        return record.update({ quantinty: 50 });
+      })
+      .then(() => {
+        res.sendStatus(200);
+      });
+  });
 };
