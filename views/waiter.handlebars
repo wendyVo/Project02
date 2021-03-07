@@ -11,8 +11,8 @@
                         {{/each}}
                   
                     </div>
-                    <div>
-                        <h5>Order for table: {{tableNumber}}</h5>
+                    <div id="tableOrder" class="hidden">
+                        <h5>Order for table: {{this.id}}</h5>
                         <ul class="waiterList">
                             {{#each dishesOrdered}}
                             <li class="list-group-item dish" data-id="{{id}}">{{title}} {{price}}</li>
