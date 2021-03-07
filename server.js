@@ -13,19 +13,31 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
+const Handlebars = require("handlebars");
 const exphbs = require("express-handlebars");
+const {
+  allowInsecurePrototypeAccess
+} = require("@handlebars/allow-prototype-access");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
+  })
+);
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 const routes = require("./routes/routes");
 const ingredientRoutes = require("./routes/ingredient-routes.js");
 const managerRoutes = require("./routes/manager-routes");
+const waiterRoutes = require("./routes/waiter-routes");
 
 ingredientRoutes(app);
 managerRoutes(app);
 routes(app);
+waiterRoutes(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
