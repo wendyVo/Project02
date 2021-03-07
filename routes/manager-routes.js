@@ -1,12 +1,18 @@
 const db = require("../models");
 
 module.exports = app => {
+  //Main page render for view employee
   app.get("/manager", (req, res) => {
     db.Employee.findAll({}).then(response => {
       console.log(response);
       // res.render("employee", { employee })
       res.render("manager", { em: response });
     });
+  });
+
+  //This route will render add employee page if clicked the add new employee button
+  app.get("/manager/newEmployee", (req, res) => {
+    res.render("addEmpForm");
   });
 
   // Find all employees and return them to the user with res.json
