@@ -1,4 +1,4 @@
-var Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   const Table = sequelize.define("Table", {
     id: {

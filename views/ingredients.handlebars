@@ -7,9 +7,10 @@
             <div class="col-6 col-md-4 ingedientList">
                 <h3>IN STOCK</h3>
                 <ul class="list-group">
-            {{#each supplies}}
-        <li class="list-group-item" data-id="{{id}}"> {{name}}</li>
-            {{/each}}
+                    {{ inStock }}
+            {{!-- {{#each inStock }}
+                <li>{{name}}</li>
+            {{/each}} --}}
 </ul>
             </div>
 

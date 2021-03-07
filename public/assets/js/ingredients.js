@@ -9,6 +9,7 @@ const getIngredientsGreater = () => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      res.render("ingredients", data);
       for (let i = 0; i < data.length; i++) {
         console.log("consoloe log data" + data[i].name);
       }
@@ -34,5 +35,5 @@ const getIngredientsless = () => {
     .catch(error => console.log(`error:, ${error}`));
 };
 
-getIngredientsGreater();
-getIngredientsless();
+// getIngredientsGreater();
+// getIngredientsless();

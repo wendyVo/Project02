@@ -1,4 +1,4 @@
-var Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   const Employee = sequelize.define("Employee", {
     // Giving the Employee model a name of type STRING
