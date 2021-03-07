@@ -5,24 +5,28 @@ let inStock;
 let lowStock;
 
 module.exports = app => {
-  // get the ingredients where are greater from the minimun quantity
-  db.Ingredient.findAll({
-    where: {
-      quantity: { [sequelize.Op.gt]: sequelize.col("minimumQuantity") }
-    }
-  }).then(data => {
-    inStock = data;
-  });
+  const find = () => {
+    // get the ingredients where are greater from the minimun quantity
+    db.Ingredient.findAll({
+      where: {
+        quantity: { [sequelize.Op.gt]: sequelize.col("minimumQuantity") }
+      }
+    }).then(data => {
+      inStock = data;
+    });
 
-  // get the ingredients where are less or equal from the minimun quantity
-  db.Ingredient.findAll({
-    where: {
-      quantity: { [sequelize.Op.lte]: sequelize.col("minimumQuantity") }
-    }
-  }).then(data => {
-    lowStock = data;
-  });
+    // get the ingredients where are less or equal from the minimun quantity
+    db.Ingredient.findAll({
+      where: {
+        quantity: { [sequelize.Op.lte]: sequelize.col("minimumQuantity") }
+      }
+    }).then(data => {
+      lowStock = data;
+    });
+  };
 
+  find();
+  
   app.get("/ingredients", (req, res) => {
     res.render("ingredients", { inStock, lowStock });
   });
