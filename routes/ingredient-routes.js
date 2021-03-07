@@ -3,21 +3,20 @@ const sequelize = require("sequelize");
 
 module.exports = app => {
   // get the ingredients where are greater minimun quantity
-  app.get("/api/ingredients", (req, res) => {
+  app.get("/ingredients", (req, res) => {
     db.Ingredient.findAll({
       where: {
         quantity: { [sequelize.Op.gt]: sequelize.col("minimumQuantity") }
       }
-    })
-      .then(response => {
-        console.log(response);
-        return res.json(response);
-      })
-      .catch(err => {
-        console.log(err);
-        return res.json(err);
-      });
+    }).then(inStock => {
+      res.render("ingredients", { inStock });
+    });
   });
+
+  // app.get("/ingredients", (req, res) => {
+  //   res.render("ingredients", { inStock: "data" });
+  // });
+
   // get the ingredients where are less or equal minimun quantity
   app.get("/api/ingredient", (req, res) => {
     db.Ingredient.findAll({

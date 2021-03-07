@@ -1,7 +1,8 @@
+const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   const Dish = sequelize.define("Dish", {
     id: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
@@ -18,6 +19,14 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [1]
       }
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()")
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()")
     }
   });
   // Table table with Dish Table connect "many to many"

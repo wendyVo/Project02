@@ -1,8 +1,9 @@
+const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   const Employee = sequelize.define("Employee", {
     // Giving the Employee model a name of type STRING
     employeeId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
