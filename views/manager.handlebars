@@ -61,14 +61,36 @@
         </div>
     </nav>
 </div>
-{{#each em}}
-            {{!-- {{em}} --}}
+        {{!-- {{#each em}}
             <ul class="list-group">    
         <li class="list-group-item" >{{firstName}} {{lastName}}</li>
         <li class="list-group-item" >{{position}} </li>
         <li class="list-group-item" >{{pinNumber}} </li>
         </ul>
-            {{/each}}
+            {{/each}} --}}
+
+        <table class="table empTable">
+            <thead class="thead-dark">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Pin Number</th>
+                    <th>Position</th>
+                    <th>Manager Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each em}}
+                    <tr>
+                        <td>{{firstName}}</td>
+                        <td>{{lastName}}</td>
+                        <td>{{pinNumber}}</td>
+                        <td>{{position}}</td>
+                        <td>{{managerId}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
 </div>
 </article>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
