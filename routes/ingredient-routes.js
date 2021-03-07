@@ -8,8 +8,8 @@ module.exports = app => {
       where: {
         quantity: { [sequelize.Op.gt]: sequelize.col("minimumQuantity") }
       }
-    }).then(data => {
-      res.render("ingredients", { inStock: data[2].quantity });
+    }).then(inStock => {
+      res.render("ingredients", { inStock });
     });
   });
 

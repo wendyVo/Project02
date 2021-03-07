@@ -28,14 +28,13 @@
 
             <div class="col-md-6 menu">
                 <h1>Menu</h1>
-                {{!-- <div class="card"> --}}
-                    <div>
-                        <ul class="waiterList">
-                            {{#each dish}}
-                            <li class="list-group-item" data-id="{{id}}"> {{name}} {{price}}</li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                <div>
+                    <ul class="waiterList" id="dishesList">
+                        {{#each dishes}}
+                        <li class="list-group-item dish" data-id="{{id}}">{{title}} {{price}}</li>
+                        {{/each}}
+                        <li class="dish"></li>
+                    </ul>
                 </div>
             </div>
         </div>
