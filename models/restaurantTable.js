@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  const Table = sequelize.define("Table", {
+  const RestaurantTable = sequelize.define("RestaurantTable", {
     id: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
+    dimension: {
+      type: DataTypes.STRING
+    },
     isAvailable: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
@@ -22,13 +25,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   // Table table with Dish Table connect "many to many"
-  Table.associate = function(models) {
-    Table.belongsToMany(models.Dish, {
+  RestaurantTable.associate = function(models) {
+    RestaurantTable.belongsToMany(models.Dish, {
       through: "TableDishes",
       as: "dishes",
       foreignKey: "tableId",
       otherKey: "dishId"
     });
   };
-  return Table;
+  return RestaurantTable;
 };

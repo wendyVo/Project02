@@ -1,4 +1,4 @@
-<article>
+<article id="managePage">
     <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
@@ -61,6 +61,14 @@
         </div>
     </nav>
 </div>
+{{#each em}}
+            {{!-- {{em}} --}}
+            <ul class="list-group">    
+        <li class="list-group-item" >{{firstName}} {{lastName}}</li>
+        <li class="list-group-item" >{{position}} </li>
+        <li class="list-group-item" >{{pinNumber}} </li>
+        </ul>
+            {{/each}}
 </div>
 </article>
     <!-- jQuery CDN - Slim version (=without AJAX) -->

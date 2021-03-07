@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded! 🚀");
 
-  let dishes = {};
   // const menu = document.querySelector(".dish");
   const tableBtn = document.querySelector(".tableBtn");
 
@@ -19,8 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        dishes = data;
-        console.log(dishes);
       });
   };
 });
