@@ -1,0 +1,45 @@
+<!-- This handlebars is used to add new employee Form in Manager page -->
+<div>
+    <a class="nav-button btn btn-primary" href="/manager" role="button">View Employees</a>
+    <h3>Add New Employee</h3>
+</div>
+<form id="addEmployee">
+    <div class="form-group">
+        <!-- First Name -->
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+        <!-- Last Name -->
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName">
+    </div>
+
+     <div class="form-group">
+        <!-- Pin Number -->
+        <label for="pinNumber">Pin Number</label>
+        <input type="number" class="form-control" id="pinNumber" name="pinNumber">
+    </div>
+
+    <div class="form-group">
+         <!-- Position -->
+      <label for="position">Position</label>
+      <select id="position" class="form-control">
+        <option selected>Choose...</option>
+        <option>Waiter</option>
+        <option>Chef</option>
+        <option>Kitchen Hand</option>
+        <option>Supervisor</option>
+        <option>Manager</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <!-- Manager Id -->
+        <label for="managerId">Manager Id</label>
+        <input type="number" class="form-control" id="managerId" name="managerId" placeholder="Leave null if not manager">
+    </div>
+
+      <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+</form>
