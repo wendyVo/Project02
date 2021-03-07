@@ -19,7 +19,9 @@
                     <div>
                         <h5>Order for table: {{tableNumber}}</h5>
                         <ul class="waiterList">
-                            <li></li>
+                            {{#each dishesOrdered}}
+                            <li class="list-group-item dish" data-id="{{id}}">{{title}} {{price}}</li>
+                            {{/each}}
                         </ul>
                     </div>
                 </div>

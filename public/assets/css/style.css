@@ -36,7 +36,7 @@ article {
 }
 
 footer {
-  position: absolute !important;
+  position: fixed !important;
   bottom: 0px;
   min-width: 100%;
   text-align: center;
@@ -200,12 +200,12 @@ h5 {
 }
 
 .dish {
-    background-color: transparent;
-    padding: 20px;
-    padding-left: 0px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+  background-color: transparent;
+  padding: 20px;
+  padding-left: 0px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 /* Manager Page CSS */
 

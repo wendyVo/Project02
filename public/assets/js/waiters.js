@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded! 🚀");
 
-  let dishes = {};
   // const menu = document.querySelector(".dish");
   const tableBtn = document.querySelector(".tableBtn");
-
+const 
   tableBtn.addEventListener("click", e => {
     e.preventDefault();
     console.log("clicked");
@@ -19,8 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        dishes = data;
-        console.log(dishes);
+        
       });
   };
 });
