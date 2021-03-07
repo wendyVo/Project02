@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: sequelize.literal("NOW()")
     }
   });
-  //Table table with Dish Table connect "many to many"
+  // Table table with Dish Table connect "many to many"
   Dish.associate = function(models) {
     Dish.belongsToMany(models.Table, {
       through: "TableDishes",

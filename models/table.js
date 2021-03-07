@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  //Table table with Dish Table connect "many to many"
+  // Table table with Dish Table connect "many to many"
   Table.associate = function(models) {
     Table.belongsToMany(models.Dish, {
       through: "TableDishes",
