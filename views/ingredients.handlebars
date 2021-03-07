@@ -8,7 +8,7 @@
                 <h3>IN STOCK</h3>
                 <ul class="list-group">
                     {{#each inStock }}
-                        <li  class="list-group-item" data-id="{{id}}">{{name}}</li>
+                        <li  class="list-group-item" data-id="{{id}}" data-quantity=20>{{name}}</li>
                         {{else}}
                             <p class="list-group-item">Nothing in Stock!</p>
                     {{/each}}

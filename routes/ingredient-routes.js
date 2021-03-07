@@ -29,16 +29,12 @@ module.exports = app => {
 
   app.put("/api/ingredients/:id", (req, res) => {
     db.Ingredient.update(
-      { quantinty: 50 },
+      { quantity: sequelize.literal("quantity + 40") },
       {
         where: { id: req.params.id }
       }
-    )
-      .then(record => {
-        return record.update({ quantinty: 50 });
-      })
-      .then(() => {
-        res.sendStatus(200);
-      });
+    ).then(() => {
+      res.sendStatus(200);
+    });
   });
 };
