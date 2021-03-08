@@ -34,12 +34,14 @@ const ingredientRoutes = require("./routes/ingredient-routes.js");
 const managerRoutes = require("./routes/manager-routes");
 const waiterRoutes = require("./routes/waiter-routes");
 const loginRoutes = require("./routes/login-routes");
+const chefRoutes = require("./routes/chef-routes");
 
 ingredientRoutes(app);
 managerRoutes(app);
 routes(app);
 waiterRoutes(app);
 loginRoutes(app);
+chefRoutes(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {

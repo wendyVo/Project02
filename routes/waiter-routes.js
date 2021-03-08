@@ -36,6 +36,19 @@ module.exports = app => {
       });
   });
 
+  app.get("/waiter/table/Order/:id", (req, res) => {
+    db.RestaurantTable.findAll({
+      where: {
+        id: req.params.id
+      },
+      include: [{ model: db.Dish, as: "dishes" }]
+    })
+      .then(response => res.json(response))
+      .catch(err => {
+        console.error(err);
+      });
+  });
+
   // app.post("/api/table/:id/add-dish", (req, res) => {
   //   // get table record
   //   db.Table.findOne({ id: req.params.id }).then(async table => {
