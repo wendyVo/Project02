@@ -1,39 +1,34 @@
-// const getIngredientsGreater = () => {
-//   console.log("Get ingredients greater minimumQuantity");
-//   fetch("/api/ingredients", {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json"
-//     }
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//       res.render("ingredients", data);
-//       for (let i = 0; i < data.length; i++) {
-//         console.log("consoloe log data" + data[i].name);
-//       }
-//     })
-//     .catch(error => console.log(`error:, ${error}`));
-// };
+document.addEventListener("DOMContentLoaded", event => {
+  if (event) {
+    console.info("DOM loaded");
+  }
 
-// const getIngredientsless = () => {
-//   console.log("Get ingredients less  or equal minimumQuantity");
-//   fetch("/api/ingredient", {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json"
-//     }
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//       for (let i = 0; i < data.length; i++) {
-//         console.log("consoloe log data" + data[i].name);
-//       }
-//     })
-//     .catch(error => console.log(`error:, ${error}`));
-// };
+  const orderBtn = document.querySelectorAll(".orderButton");
 
-// getIngredientsGreater();
-// getIngredientsless();
+  orderBtn.forEach(button => {
+    button.addEventListener("click", e => {
+      console.log("test");
+      // Grabs the id of the element that goes by the name, "id"
+      const id = e.target.getAttribute("data-id");
+      const newQuantity = e.target.getAttribute("data-quantity");
+      const newStock = {
+        id: id,
+        quantity: newQuantity
+      };
+      fetch(`/api/ingredients/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newStock)
+      }).then(response => {
+        if (response.ok) {
+          console.log(`the ingredient with the id: ${id} reordered`);
+          window.location.replace("/ingredients");
+        } else {
+          alert("something went wrong!");
+        }
+      });
+    });
+  });
+});
