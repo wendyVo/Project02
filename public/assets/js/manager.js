@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded! 🚀");
   //add new employee functionality
   const addEmpBtn = document.getElementById("addEmpBtn");
-  console.log(addEmpBtn);
   addEmpBtn.addEventListener("click", e => {
     e.preventDefault();
 
@@ -41,5 +40,23 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.replace("/manager");
       })
       .catch(err => console.error(err));
+  });
+
+  //delete Employee Functionality
+  const deleteEmp = document.getElementById("deleteEmp");
+
+  deleteEmp.addEventListener("click", e => {
+    e.preventDefault();
+    alert("clicked");
+    const id = e.target.parentElement("tr").getAttribute("data-id");
+    console.log(id);
+
+    $.ajax({
+      method: "DELETE",
+      url: `/api/employees/${id}`
+    }).then(() => {
+      alert("Removed employee successly");
+      window.location.replace("/manager");
+    });
   });
 });
