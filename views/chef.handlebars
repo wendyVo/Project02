@@ -1,7 +1,37 @@
 <article>
-  <div class="dishes">
-    Dishes to be prepared and ready
+  <div class="container containerWaiter">
+    <div class="row waiterRow">
+      <div class="col-md-6 tablesLayout">
+        <h1> To be prepared</h1>
+        <div>
+        <ul class="waiterList" id="dishesList">
+
+            {{#each dishes}}
+            {{!-- {{#if isReady}} --}}
+            <li class="list-group-item dish" data-id="{{id}}" data-status={{isReady}}>{{title}}</li>
+            {{!-- {{/if}} --}}
+            {{/each}}
+
+         </ul>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 menu">
+        <h1>Ready</h1>
+        <div>
+          <ul class="waiterList" id="dishesList">
+            {{!-- {{#else}}
+            {{#each dishes}} --}}
+            {{!-- <li class="list-group-item dish" data-id="{{id}}">{{title}}</li> --}}
+            {{!-- {{/each}}
+            {{/else}} --}}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+
 </article>
 
-<script type="text/javascript" src="/assets/js/kitchen.js"></script>
+<script type="text/javascript" src="/assets/js/chef.js"></script>

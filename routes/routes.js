@@ -3,9 +3,9 @@ module.exports = app => {
     res.render("login");
   });
 
-  app.get("/chef", (req, res) => {
-    res.render("chef");
-  });
+  // app.get("/chef", (req, res) => {
+  //   res.render("chef");
+  // });
 
   app.get("/ingredients", (req, res) => {
     res.render("ingredients");
