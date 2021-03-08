@@ -217,6 +217,16 @@ h5 {
     border-radius: 5px;
 }
 
+.orderButton:hover {
+    background-color: rgb(179, 176, 176);
+}
+
+.list-group-item {
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
+
 
 /* Manager Page CSS */
 
