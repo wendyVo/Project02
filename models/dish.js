@@ -20,6 +20,13 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
+    isReady: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal("NOW()")
