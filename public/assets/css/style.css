@@ -204,7 +204,11 @@ h5 {
     border-right: none;
 }
 
+.dish:hover {
+  font-weight: bolder;
+}
 /* Ingredients Page CSS */
+
 .orderButton {
   float: right;
   background-color: rgb(170, 167, 167);
