@@ -51,16 +51,37 @@ module.exports = app => {
 
   // app.post("/api/table/:id/add-dish", (req, res) => {
   //   // get table record
-  //   db.Table.findOne({ id: req.params.id }).then(async table => {
-  //     const dish = await db.Dish.findOne({ id: req.body.dish_id });
-
+  //   db.Table.findOne({
+  //     where: { id: req.params.id }
+  //   }).then(table => {
+  //     const dish = db.Dish.findOne({
+  //       where: { id: req.body.id }
+  //     });
   //     table.setDishes([dish]);
+  //     console.log(`This ${dish} belongs to this ${table}`);
   //   });
-
-  // get dish record
-
-  //   db.Table.setDishes();
+  //   // db.Table.setDishes();
+  //   return console.log(res);
   // });
+
+  app.get("/api/table/:id/add-dish/:id2", async (req, res) => {
+    try {
+      const table = await db.RestaurantTable.findOne({
+        where: { id: req.params.id }
+      });
+      const dish = await db.Dish.findOne({
+        where: { id: req.params.id2 }
+      });
+      const name = dish.dataValues.title;
+      const cus = table.dataValues.numCustomers;
+      console.log(name);
+      console.log(cus);
+      res.json(name); //to prevent lint
+      return table.setDishes([dish]);
+    } catch (err) {
+      console.error(err);
+    }
+  });
 
   app.get("/api/tables", (req, res) => {
     db.RestaurantTable.findAll()
