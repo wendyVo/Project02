@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", event => {
       }).then(response => {
         if (response.ok) {
           console.log(`the ingredient with the id: ${id} reordered`);
-          location.reload("/ingredients");
+          window.location.replace("/ingredients");
         } else {
           alert("something went wrong!");
         }

@@ -26,18 +26,19 @@ module.exports = app => {
   };
 
   find();
-  
+
   app.get("/ingredients", (req, res) => {
     res.render("ingredients", { inStock, lowStock });
   });
 
   app.put("/api/ingredients/:id", (req, res) => {
     db.Ingredient.update(
-      { quantity: sequelize.literal("quantity + 40") },
+      { quantity: sequelize.literal("quantity + minimumQuantity") },
       {
         where: { id: req.params.id }
       }
     ).then(() => {
+      find();
       res.sendStatus(200);
     });
   });
