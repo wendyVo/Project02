@@ -1,10 +1,12 @@
 <!-- This handlebars is used to add new employee Form in Manager page -->
 <article>
-<div>
-    <a class="nav-button btn btn-primary" href="/manager" role="button">View Employees</a>
-    <h3>Add New Employee</h3>
-</div>
+    <div class="wrapper">
+    {{> managerNav }}
+    {{!-- <a class="nav-button btn btn-primary" href="/manager" role="button">View Employees</a> --}}
+   
+    <div class="empForm">
 <form id="addEmployee">
+     <h3>Add New Employee</h3>
     <div class="form-group">
         <!-- First Name -->
         <label for="firstName">First Name</label>
@@ -44,4 +46,8 @@
 
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+</div>
 </article>
+
+{{> managerFooter }}

@@ -1,74 +1,7 @@
 <article id="managePage">
     <div class="wrapper">
     <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Manager Admin</h3>
-        </div>
-
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#empSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employees</a>
-                <ul class="collapse list-unstyled" id="empSubmenu">
-                    <li>
-                        <a href="/manager">View Employees</a>
-                    </li>
-                    <li>
-                        <a href="/manager/newEmployee">Add Employees</a>
-                    </li>
-                    <li>
-                        <a href="#">Remove Employees</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#menuSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Menu</a>
-                <ul class="collapse list-unstyled" id="menuSubmenu">
-                    <li>
-                        <a href="#">Add dish</a>
-                    </li>
-                    <li>
-                        <a href="#">Remove dish</a>
-                    </li>
-                </ul>
-            </li>
-            
-            <li>
-                <a href="#ingSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ingredients</a>
-                <ul class="collapse list-unstyled" id="ingSubmenu">
-                    <li>
-                        <a href="#">View Ingredients</a>
-                    </li>
-                    <li>
-                        <a href="#">Add Ingredients</a>
-                    </li>
-                </ul>
-            </li>
-           
-        </ul>
-    </nav>
-    {{!-- //Toggle button --}}
-    <div id="content">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-                <span>Toggle Menu</span>
-            </button>
-
-        </div>
-    </nav>
-</div>
-        {{!-- {{#each em}}
-            <ul class="list-group">    
-        <li class="list-group-item" >{{firstName}} {{lastName}}</li>
-        <li class="list-group-item" >{{position}} </li>
-        <li class="list-group-item" >{{pinNumber}} </li>
-        </ul>
-            {{/each}} --}}
-
+    {{> managerNav }}
         <table class="table empTable">
             <thead class="thead-dark">
                 <tr>
@@ -93,20 +26,5 @@
         </table>
 </div>
 </article>
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     
-      <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-     
-<script>
-$(document).ready(function () {
 
-    $("#sidebarCollapse").on("click", function () {
-        $("#sidebar").toggleClass("active");
-    });
-
-});
-  </script>
-  
-{{!-- <script type="text/javascript" src="/assets/js/manager.js"></script> --}}
+{{> managerFooter }}
