@@ -21,6 +21,20 @@ module.exports = (sequelize, DataTypes) => {
         len: [1]
       }
     },
+    email: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    phone: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true
+      }
+    },
     pinNumber: {
       type: DataTypes.INTEGER,
       allowNull: false,
