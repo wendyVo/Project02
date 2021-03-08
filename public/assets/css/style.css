@@ -204,6 +204,10 @@ h5 {
     border-right: none;
 }
 
+.dish:hover {
+    font-weight: bolder;
+}
+
 
 /* Ingredients Page CSS */
 
