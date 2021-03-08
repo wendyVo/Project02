@@ -22,11 +22,21 @@ module.exports = app => {
 
   //Add new employee
   app.post("/api/employees", (req, res) => {
-    const { firstName, lastName, position, pinNumber, managerId } = req.body;
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      position,
+      pinNumber,
+      managerId
+    } = req.body;
 
     const newEmployee = {
       firstName,
       lastName,
+      email,
+      phone,
       position,
       pinNumber,
       managerId

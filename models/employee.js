@@ -54,7 +54,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       validate: {
         isNumeric: true
-      }
+      },
+      defaultValue: null
     }
   });
   return Employee;

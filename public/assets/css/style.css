@@ -330,6 +330,7 @@ a[data-toggle="collapse"] {
     opacity: 0.9;
     border: 2px darkslateblue solid;
     border-radius: 25px;
+    padding-bottom: 50px;
 }
 
 .form-group {
