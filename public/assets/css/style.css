@@ -1,205 +1,209 @@
 body {
-  color: #000;
-  font-family: "Roboto", sans-serif;
-  padding-bottom: 50px;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    padding-bottom: 50px;
 }
+
 
 /* Styles shared through all app */
 
 article {
-  background: url("../img/oldSchoolResOpa80.png") no-repeat center fixed;
-  background-size: cover;
-  position: absolute;
-  height: 100%;
-  min-width: 100%;
-  text-align: center;
-  line-height: 100%;
-  margin-bottom: 50px;
+    background: url("../img/oldSchoolResOpa80.png") no-repeat center fixed;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    min-width: 100%;
+    text-align: center;
+    line-height: 100%;
+    margin-bottom: 50px;
 }
 
 .navbar {
-  background-color: #eee;
-  margin-bottom: 0;
+    background-color: #eee;
+    margin-bottom: 0;
 }
 
 .fas {
-  color: #000;
+    color: #000;
 }
 
 .signOut {
-  float: right;
+    float: right;
 }
 
 .tables {
-  min-width: 100%;
-  min-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 footer {
-  position: fixed !important;
-  bottom: 0px;
-  min-width: 100%;
-  text-align: center;
-  line-height: 50px;
-  margin-bottom: 0px !important;
-  border-bottom-width: 0px !important;
-  padding-bottom: 0px !important;
+    position: fixed !important;
+    bottom: 0px;
+    min-width: 100%;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 0px !important;
+    border-bottom-width: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .navbar-text {
-  margin: auto;
-  color: #000 !important;
+    margin: auto;
+    color: #000 !important;
 }
+
 
 /* Login.html css */
 
 .containerLogin {
-  height: 100%;
-  opacity: 100%;
-  padding: auto;
-  text-align: center;
-  display: block;
-  place-items: center center;
+    height: 100%;
+    opacity: 100%;
+    padding: auto;
+    text-align: center;
+    display: block;
+    place-items: center center;
 }
 
 .pinBox {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
-  height: 100%;
-  padding: 20%;
-  /* text-align: center; */
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    height: 100%;
+    padding: 20%;
+    /* text-align: center; */
 }
 
 .pincode-input-text,
 .form-control.pincode-input-text {
-  text-align: center;
-  float: left;
-  background-color: #eee !important;
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-  color: black;
+    text-align: center;
+    float: left;
+    background-color: #eee !important;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    color: black;
 }
 
 .pincode-input-text-masked {
-  font-family: "Roboto", sans-serif;
-  font-size: xx-large;
+    font-family: "Roboto", sans-serif;
+    font-size: xx-large;
 }
 
 #pinSubmit {
-  background-color: #eee;
-  color: black;
-  font-family: "Roboto", sans-serif;
-  border-style: none;
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 14px;
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
+    background-color: #eee;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    border-style: none;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
 }
 
 #pinSubmit:hover {
-  color: white !important;
-  background-color: #000;
+    color: white !important;
+    background-color: #000;
 }
+
 
 /* Waiters page css*/
 
 .containerWaiter {
-  height: 100%;
-  padding: auto;
-  text-align: center;
-  display: block;
-  padding: 20px;
+    height: 100%;
+    padding: auto;
+    text-align: center;
+    display: block;
+    padding: 20px;
 }
 
 .waiterRow {
-  min-height: 80%;
-  max-height: 80%;
-  max-width: 80%;
-  margin: auto;
+    min-height: 80%;
+    max-height: 80%;
+    max-width: 80%;
+    margin: auto;
 }
 
 h1 {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .tablesLayout,
 .menu {
-  background-color: #eee;
-  margin-top: 40px;
+    background-color: #eee;
+    margin-top: 40px;
 }
 
 .tablesLayout {
-  position: relative;
-  right: 15px;
+    position: relative;
+    right: 15px;
 }
 
 .tables {
-  padding: 20px;
+    padding: 20px;
 }
 
 .table {
-  margin: auto;
-  margin-bottom: 20px;
-  background: #cacac4;
-  border-radius: 4px;
+    margin: auto;
+    margin-bottom: 20px;
+    background: #cacac4;
+    border-radius: 4px;
 }
 
 .tableBtn {
-  margin-top: 25%;
-  font-family: "Roboto", sans-serif;
-  background-color: #eee;
-  color: black;
-  font-weight: bold;
-  font-size: large;
-  border: none;
-  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
+    margin-top: 25%;
+    font-family: "Roboto", sans-serif;
+    background-color: #eee;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
 }
 
 .tableBtn:hover {
-  margin: 25%;
-  background-color: lightgrey;
+    margin: 25%;
+    background-color: lightgrey;
 }
 
 .tableBtn:active {
-  margin: 25%;
-  background-color: grey;
+    margin: 25%;
+    background-color: grey;
 }
 
 .tableBtn:focus {
-  margin: 25%;
-  background-color: grey;
+    margin: 25%;
+    background-color: grey;
 }
 
 h5 {
-  float: left;
-  margin-left: 42px;
+    float: left;
+    margin-left: 42px;
 }
 
 .waiterList {
-  list-style: none;
+    list-style: none;
 }
 
 #dishesList {
-  margin: 20px;
-  margin-top: 40px;
-  padding: 0px;
-  font-size: large;
-  text-align: left;
+    margin: 20px;
+    margin-top: 40px;
+    padding: 0px;
+    font-size: large;
+    text-align: left;
 }
 
 .dish {
-  background-color: transparent;
-  padding: 20px;
-  padding-left: 0px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+    background-color: transparent;
+    padding: 20px;
+    padding-left: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
+
 /* Ingredients Page CSS */
 .orderButton {
   float: right;
@@ -210,98 +214,102 @@ h5 {
 /* Manager Page CSS */
 
 p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  color: #999;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
 }
 
 a,
 a:hover,
 a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
 }
 
 #sidebar {
-  background: #7386d5;
-  color: #fff;
-  transition: all 0.3s;
+    background: #7386d5;
+    color: #fff;
+    transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
-  background: #6d7fcc;
+    padding: 20px;
+    background: #6d7fcc;
 }
 
 #sidebar ul.components {
-  padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
-  color: #fff;
-  padding: 10px;
+    color: #fff;
+    padding: 10px;
 }
 
 #sidebar ul li a {
-  padding: 10px;
-  font-size: 1.1em;
-  display: block;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
 }
 
 #sidebar ul li a:hover {
-  color: #7386d5;
-  background: #fff;
+    color: #7386d5;
+    background: #fff;
 }
 
-#sidebar ul li.active > a,
+#sidebar ul li.active>a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc;
+    color: #fff;
+    background: #6d7fcc;
 }
 
 ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
-  background: #6d7fcc;
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
 }
 
 .wrapper {
-  display: flex;
-  width: 100%;
-  align-items: stretch;
+    display: flex;
+    width: 100%;
+    align-items: stretch;
 }
 
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  min-height: 100vh;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
 }
 
 #sidebar.active {
-  margin-left: -250px;
+    margin-left: -250px;
 }
 
 a[data-toggle="collapse"] {
-  position: relative;
+    position: relative;
 }
 
 .dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.empTable {
+    margin: 20px;
 }
 
 @media (max-width: 768px) {
-  #sidebar {
-    margin-left: -250px;
-  }
-  #sidebar.active {
-    margin-left: 0;
-  }
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
 }
