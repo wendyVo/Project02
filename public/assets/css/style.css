@@ -204,22 +204,30 @@ h5 {
     border-right: none;
 }
 
-/* Ingredients Page CSS */
-.orderButton {
-  float: right;
-  background-color: rgb(170, 167, 167);
-  border-radius: 5px;
+.dish:hover {
+    font-weight: bolder;
 }
+
+
+/* Ingredients Page CSS */
+
+.orderButton {
+    float: right;
+    background-color: rgb(170, 167, 167);
+    border-radius: 5px;
+}
+
 
 /* Manager Page CSS */
 
-p {
+
+/* p {
     font-family: "Poppins", sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
-}
+} */
 
 a,
 a:hover,
@@ -305,9 +313,30 @@ a[data-toggle="collapse"] {
     margin: 20px;
 }
 
+.empForm {
+    width: 60%;
+    margin: 30px;
+    background-color: rgba(202, 202, 196, 255);
+    opacity: 0.9;
+    border: 2px darkslateblue solid;
+    border-radius: 25px;
+}
+
+.form-group {
+    padding: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
+    }
+    .empForm {
+        width: 100%;
+    }
+    #content span {
+        display: none;
     }
     #sidebar.active {
         margin-left: 0;

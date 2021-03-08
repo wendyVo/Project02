@@ -1,19 +1,46 @@
+// Wait until the DOM is loaded to start the script
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded! 🚀");
 
-  // const menu = document.querySelector(".dish");
-  const tableBtn = document.querySelector(".tableBtn");
+  // Get the html elements from the waiter.handlebar
+  const tableBtn = document.querySelectorAll(".tableBtn");
+  const tableOrder = document.getElementById("tableOrder");
+  const dish = document.querySelectorAll(".dish");
 
-  tableBtn.addEventListener("click", e => {
-    e.preventDefault();
-    console.log("clicked");
-    getDishes();
+  // Make the table buttons clickable
+  tableBtn.forEach(button => {
+    button.addEventListener("click", e => {
+      e.preventDefault();
+      console.log("clicked");
+      hideShow();
+      getDishes();
+    });
   });
 
+  // Make the dishes clickable
+  dish.forEach(button => {
+    button.addEventListener("click", e => {
+      e.preventDefault();
+      console.log("clicked");
+      const dishId = e.target.getAttribute("data-id");
+      console.log(dishId);
+    });
+  });
+
+  // Funtion to display or hide a table order
+  const hideShow = () => {
+    if (tableOrder.className === "showing") {
+      tableOrder.className = "hidden";
+      tableOrder.setAttribute("style", "display: none");
+    } else if ((tableOrder.className = "hidden")) {
+      tableOrder.className = "showing";
+      tableOrder.setAttribute("style", "display: block");
+    }
+  };
+  // Function to get all the dishes on the menu
   const getDishes = () => {
     fetch("/api/dishes", {
       method: "GET"
-      // headers: { "Content-Type:": "application/json" },
     })
       .then(response => response.json())
       .then(data => {
