@@ -40,9 +40,9 @@
             <div class="col-md-6 menu">
                 <h1>Menu</h1>
                 <div>
-                    <ul class="waiterList" id="dishesList">
+                    <ul class="List">
                         {{#each dishes}}
-                        <li class="list-group-item menuDish" id="dish" data-id="{{this.id}}">{{title}} {{price}}</li>
+                        <li class="list-group-item menuDish line" data-id="{{this.id}}">{{title}} {{price}}</li>
                         {{/each}}
                     </ul>
                 </div>
