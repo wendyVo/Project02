@@ -1,109 +1,109 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded! 🚀");
+  console.log("DOM loaded! 🚀");
 
-    ///////////EMPLOYEE section in Manager Page///////////
+  ///////////EMPLOYEE section in Manager Page///////////
 
-    // delete Employee
-    const deleteEmp = document.querySelectorAll(".deleteEmp");
-    console.log(deleteEmp);
-    if (deleteEmp) {
-        deleteEmp.forEach(emp => {
-            emp.addEventListener("click", e => {
-                e.preventDefault();
-                console.log("clicked");
-                const id = emp.getAttribute("data-id");
-                console.log(id);
+  // delete Employee
+  const deleteEmp = document.querySelectorAll(".deleteEmp");
+  console.log(deleteEmp);
+  if (deleteEmp) {
+    deleteEmp.forEach(emp => {
+      emp.addEventListener("click", e => {
+        e.preventDefault();
+        console.log("clicked");
+        const id = emp.getAttribute("data-id");
+        console.log(id);
 
-                fetch(`/api/employees/${id}`, {
-                    method: "DELETE",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                }).then(response => {
-                    alert("The employee has been removed successfully!!");
-                    window.location.replace("/manager");
-                });
-            });
+        fetch(`/api/employees/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }).then(() => {
+          alert("The employee has been removed successfully!!");
+          window.location.replace("/manager");
         });
-    }
+      });
+    });
+  }
 
-    //add new employee functionality
-    const addEmpBtn = document.getElementById("addEmpBtn");
+  //add new employee functionality
+  const addEmpBtn = document.getElementById("addEmpBtn");
 
-    if (addEmpBtn) {
-        addEmpBtn.addEventListener("click", e => {
-            e.preventDefault();
-            console.log(addEmpBtn);
-            const newEmployee = {
-                firstName: $("#firstName")
-                    .val()
-                    .trim(),
-                lastName: $("#lastName")
-                    .val()
-                    .trim(),
-                email: $("#email")
-                    .val()
-                    .trim(),
-                phone: $("#phone")
-                    .val()
-                    .trim(),
-                pinNumber: $("#pinNumber")
-                    .val()
-                    .trim(),
-                position: $("#position")
-                    .val()
-                    .trim(),
-                managerId: $("#managerId")
-                    .val()
-                    .trim()
-            };
-            console.log("this is " + newEmployee);
-            fetch("/api/employees", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(newEmployee)
-                })
-                .then(() => {
-                    alert("Added employee successly");
-                    window.location.replace("/manager");
-                })
-                .catch(err => console.error(err));
-        });
-    }
+  if (addEmpBtn) {
+    addEmpBtn.addEventListener("click", e => {
+      e.preventDefault();
+      console.log(addEmpBtn);
+      const newEmployee = {
+        firstName: $("#firstName")
+          .val()
+          .trim(),
+        lastName: $("#lastName")
+          .val()
+          .trim(),
+        email: $("#email")
+          .val()
+          .trim(),
+        phone: $("#phone")
+          .val()
+          .trim(),
+        pinNumber: $("#pinNumber")
+          .val()
+          .trim(),
+        position: $("#position")
+          .val()
+          .trim(),
+        managerId: $("#managerId")
+          .val()
+          .trim()
+      };
+      console.log("this is " + newEmployee);
+      fetch("/api/employees", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newEmployee)
+      })
+        .then(() => {
+          alert("Added employee successly");
+          window.location.replace("/manager");
+        })
+        .catch(err => console.error(err));
+    });
+  }
 
-    ///////////MENU section in Manager Page///////////
-    //add new dish functionality
-    const addDishBtn = document.getElementById("addDishBtn");
+  ///////////MENU section in Manager Page///////////
+  //add new dish functionality
+  const addDishBtn = document.getElementById("addDishBtn");
 
-    if (addDishBtn) {
-        addDishBtn.addEventListener("click", e => {
-            e.preventDefault();
-            console.log(addDishBtn);
-            const newDish = {
-                title: $("#title")
-                    .val()
-                    .trim(),
-                price: $("#price")
-                    .val()
-                    .trim(),
-                isReady: $("#isReady")
-                    .val()
-                    .trim()
-            };
-            fetch("/api/newDishes", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(newDish)
-                })
-                .then(() => {
-                    alert("Added dish successfully");
-                    window.location.replace("/manager/viewDish");
-                })
-                .catch(err => console.error(err));
-        });
-    }
+  if (addDishBtn) {
+    addDishBtn.addEventListener("click", e => {
+      e.preventDefault();
+      console.log(addDishBtn);
+      const newDish = {
+        title: $("#title")
+          .val()
+          .trim(),
+        price: $("#price")
+          .val()
+          .trim(),
+        isReady: $("#isReady")
+          .val()
+          .trim()
+      };
+      fetch("/api/newDishes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newDish)
+      })
+        .then(() => {
+          alert("Added dish successfully");
+          window.location.replace("/manager/viewDish");
+        })
+        .catch(err => console.error(err));
+    });
+  }
 });
