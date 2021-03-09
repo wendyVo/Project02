@@ -1,3 +1,4 @@
+// const { response } = require("express");
 const db = require("../models");
 
 module.exports = app => {
@@ -6,7 +7,9 @@ module.exports = app => {
     db.Employee.findAll({}).then(response => {
       console.log(response);
       // res.render("employee", { employee })
-      res.render("manager", { em: response });
+      res.render("manager", {
+        em: response
+      });
     });
   });
 
@@ -15,10 +18,19 @@ module.exports = app => {
     res.render("addEmpForm");
   });
 
-  // Find all employees and return them to the user with res.json
-  app.get("/api/employees", (req, res) => {
-    db.Employee.findAll({}).then(response => res.json(response));
+  //html route to render to delete employee
+  app.get("/manager/deleteEmployee", (req, res) => {
+    db.Employee.findAll({}).then(response => {
+      res.render("deleteEmp", {
+        em: response
+      });
+    });
   });
+
+  // Find all employees and return them to the user with res.json
+  // app.get("/api/employees", (req, res) => {
+  //     db.Employee.findAll({}).then(response => res.json(response));
+  // });
 
   //Add new employee
   app.post("/api/employees", (req, res) => {
@@ -48,15 +60,15 @@ module.exports = app => {
     });
   });
 
-  app.delete("/api/employees/:id", (req, res) => {
-    // Delete the Author with the id available to us in req.params.id
+  app.delete("/api/employees/:employeeId", (req, res) => {
+    // Delete the Employee with the id available to us in req.params.id
     db.Employee.destroy({
       where: {
-        id: req.params.id
+        employeeId: req.params.employeeId
       }
     }).then(emp => {
       //Remove employee with id
-      console.log(`Remove employee with id ${emp.id}`);
+      console.log(`Remove employee with id ${emp.employeeId}`);
       res.end();
       // res.json(emp)
     });
