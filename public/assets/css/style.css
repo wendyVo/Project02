@@ -323,12 +323,13 @@ a[data-toggle="collapse"] {
 }
 
 .empForm {
-  width: 60%;
-  margin: 30px;
-  background-color: rgba(202, 202, 196, 255);
-  opacity: 0.9;
-  border: 2px darkslateblue solid;
-  border-radius: 25px;
+    width: 60%;
+    margin: 30px;
+    background-color: rgba(202, 202, 196, 255);
+    opacity: 0.9;
+    border: 2px darkslateblue solid;
+    border-radius: 25px;
+    padding-bottom: 50px;
 }
 
 .form-group {
