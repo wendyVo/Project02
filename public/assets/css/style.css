@@ -213,20 +213,18 @@ h5 {
 
 .orderButton {
     float: right;
-    background-color: rgb(170, 167, 167);
+    background-color: rgb(207, 202, 202);
     border-radius: 5px;
+    margin-left: 20px;
 }
 
 .orderButton:hover {
-    background-color: rgb(179, 176, 176);
+    background-color: rgb(78, 76, 76);
 }
 
-.list-group-item {
-    border-radius: 5px;
-    margin: 5px;
-    font-weight: bold;
+.quantity {
+    float: right;
 }
-
 
 /* Manager Page CSS */
 
