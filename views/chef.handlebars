@@ -6,34 +6,47 @@
         <div>
           <ul class="waiterList" id="dishesList">
 
-            {{#each dishes}}
-            {{#unless isReady}}
-            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:block">{{title}}
+            {{#each tables}}
+            {{#each tableDish}}
+            {{#unless this.dataValues.isReady}}
+            <li class="list-group-item" id="dish" data-id="{{this.id}}" data-status="{{this.dataValues.isReady}}"
+              style="display:block">
+              {{this.dataValues.title}}
             </li>
+
             {{else}}
-            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:none">{{title}}
+            <li class="list-group-item" id="dish" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
+              style="display:none">
+              {{this.dataValues.title}}
             </li>
             {{/unless}}
+            {{/each}}
             {{/each}}
 
           </ul>
         </div>
       </div>
 
-
       <div class="col-md-6 menu">
         <h1>Ready</h1>
         <div>
           <ul class="waiterList" id="dishesList">
 
-            {{#each dishes}}
-            {{#if isReady}}
-            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:block">{{title}}
+            {{#each tables}}
+            {{#each tableDish}}
+            {{#if this.dataValues.isReady}}
+            <li class="list-group-item" id="dish" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
+              style="display:block">
+              {{this.dataValues.title}}
             </li>
+
             {{else}}
-            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:none">{{title}}
+            <li class="list-group-item" id="dish" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
+              style="display:none">
+              {{this.dataValues.title}}
             </li>
             {{/if}}
+            {{/each}}
             {{/each}}
 
           </ul>

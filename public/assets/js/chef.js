@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuDish = document.querySelectorAll(".menuDish");
 
   // Make the dishes clickable
-  menuDish.forEach((button) => {
-    button.addEventListener("click", (e) => {
+  menuDish.forEach(button => {
+    button.addEventListener("click", e => {
       e.preventDefault();
       console.log("clicked");
       const id = e.target.getAttribute("data-id");
       const ready = e.target.getAttribute("data-status");
       const readyDish = {
         id: parseInt(id),
-        isReady: "true",
+        isReady: "true"
       };
       console.log(readyDish);
       console.log("This dish status is " + ready);
