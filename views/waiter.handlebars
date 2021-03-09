@@ -1,9 +1,12 @@
+{{!-- Define the container --}}
 <article>
     <div class="container containerWaiter">
         <div class="row waiterRow">
             <div class="col-md-6 tablesLayout">
                 <h1>Tables</h1>
                 <div class="actualTables">
+
+                    {{!-- Display the tables --}}
                     <div class="tables" style="display: flex; flex-wrap: wrap;">
 
                         {{#each tables}}
@@ -14,8 +17,8 @@
 
                     </div>
 
+                    {{!-- Display the table order --}}
                     <div>
-
                         {{#each tables}}
                         {{#if this.id }}
                         <h4 class="order{{this.id}} orderTitle" style="display: none;">Order for table: {{this.id}}</h4>
@@ -33,7 +36,7 @@
                 </div>
             </div>
 
-
+            {{!-- Display the Menu --}}
             <div class="col-md-6 menu">
                 <h1>Menu</h1>
                 <div>

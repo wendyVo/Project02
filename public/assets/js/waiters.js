@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Make the dishes clickable
+  // Make the dishes clickable to order a dish
   menuDish.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
@@ -55,17 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       orderDishes(tableId, dishId);
     });
   });
-
-  // Function to display or hide a table order
-  // const hideShow = (tableNumber) => {
-  //   if (tableOrder.className === "showing") {
-  //     tableOrder.className = "hidden";
-  //     tableOrder.setAttribute("style", "display: none");
-  //   } else if ((tableOrder.className = "hidden")) {
-  //     tableOrder.className = "showing";
-  //     tableOrder.setAttribute("style", "display: block");
-  //   }
-  // };
 
   //Function to get the dishes ordered by a table
   const getDishes = item => {
