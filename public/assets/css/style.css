@@ -224,6 +224,20 @@ h1 {
 /* Ingredients Page CSS */
 
 .orderButton {
+<<<<<<< HEAD
+    float: right;
+    background-color: rgb(207, 202, 202);
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.orderButton:hover {
+    background-color: rgb(78, 76, 76);
+}
+
+.quantity {
+    float: right;
+=======
   float: right;
   background-color: rgb(170, 167, 167);
   border-radius: 5px;
@@ -237,6 +251,7 @@ h1 {
   border-radius: 5px;
   margin: 5px;
   font-weight: bold;
+>>>>>>> 3ef23c996e2eafce703a88bc1ab9a392c3208d1e
 }
 
 /* Manager Page CSS */

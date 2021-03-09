@@ -33,7 +33,7 @@ module.exports = app => {
 
   app.put("/api/ingredients/:id", (req, res) => {
     db.Ingredient.update(
-      { quantity: sequelize.literal("quantity + minimumQuantity") },
+      { quantity: sequelize.literal("quantity + minimumQuantity*2") },
       {
         where: { id: req.params.id }
       }

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", event => {
   }
 
   const orderBtn = document.querySelectorAll(".orderButton");
-
+  // button "order "for all the low stock ingredients
   orderBtn.forEach(button => {
     button.addEventListener("click", e => {
       console.log("test");

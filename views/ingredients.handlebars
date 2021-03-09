@@ -1,34 +1,35 @@
 <article>
-    <div class="supplies-list">
-        Supplies to Order
-    </div>
-    <br>
-     <div class="container">
-        <div class="row">
-            <div class="col-6 col-md-4 ingedientList">
-                <h3>IN STOCK</h3>
-                <ul class="list-group">
-                    {{#each inStock }}
-                        <li  class="list-group-item" data-id="{{id}}" data-quantity=20>{{name}}</li>
-                        {{else}}
-                            <p class="list-group-item">Nothing in Stock!</p>
-                    {{/each}}
-                </ul>
-            </div>
-            <div class="col-6 col-md-4">
-                <h3>LOW STOCK</h3>
-                <ul class="list-group">
-                    {{#each lowStock}}
-                        <li class="list-group-item" data-id="{{id}}">
-                            {{name}}
-                            <button class="orderButton"data-id="{{id}}">ORDER</button>
-                        </li>
-                        {{else}}
-                            <p class="list-group-item">Nothing low Stock!</p>
-                    {{/each}}
-                </ul>
-            </div>
+  <div class="container containerWaiter">
+    <div class="row waiterRow">
+      <div class="col-md-6 tablesLayout">
+        <h1> Low Stock</h1>
+        <div>
+        <ul class="waiterList" id="dishesList">
+            {{#each lowStock}}
+                <li class="list-group-item dish" data-id="{{id}}">
+                    <text>{{name}}</text>
+                    <button class="orderButton" data-id="{{id}}">ORDER</button>
+                    <text class="quantity">{{quantity}}</text> 
+                </li>
+            {{/each}}
+         </ul>
         </div>
+      </div>
+      <div class="col-md-6 menu">
+        <h1>In Stock</h1>
+        <div>
+          <ul class="waiterList" id="dishesList">
+            {{#each inStock}}
+                <li class="list-group-item dish" data-id="{{id}}" >
+                    <text>{{name}}</text><text class="quantity">{{quantity}}</text> 
+                </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </article>
 
 <script type="text/javascript" src="/assets/js/ingredients.js"></script>
