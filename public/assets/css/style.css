@@ -29,6 +29,10 @@ article {
     color: #000;
 }
 
+.logo {
+    font-family: fantasy;
+}
+
 .signOut {
     float: right;
 }
