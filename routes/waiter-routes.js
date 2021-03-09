@@ -8,6 +8,7 @@ module.exports = app => {
       const tables = await db.RestaurantTable.findAll({
         include: [{ model: db.Dish, as: "dishes" }]
       });
+      console.log(tables);
       const parsedTables = tables.map(table => {
         const [width, height] = table.dataValues.dimension.split("x");
         const id = table.dataValues.id;
@@ -21,12 +22,6 @@ module.exports = app => {
           tableDish
         };
       });
-      console.log(dishes);
-      console.log(parsedTables);
-      console.log(parsedTables[0].tableDish[0].dataValues.title);
-      console.log(
-        parsedTables[0].tableDish[0].dataValues.TableDishes.dataValues.tableId
-      );
       res.render("waiter", { dishes, tables: parsedTables });
     } catch (err) {
       console.error(err);
@@ -60,7 +55,7 @@ module.exports = app => {
       });
   });
 
-  // Route to add a order a dish to a table
+  // Route to add a dish to a table
   app.get("/api/table/:id/add-dish/:id2", async (req, res) => {
     try {
       const table = await db.RestaurantTable.findOne({
@@ -70,7 +65,23 @@ module.exports = app => {
         where: { id: req.params.id2 }
       });
       console.log(res);
-      return table.setDishes([dish]);
+      return table.addDish([dish]);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
+  // Route to delete a dish from a table
+  app.get("/api/table/:id/remove-dish/:id2", async (req, res) => {
+    try {
+      const table = await db.RestaurantTable.findOne({
+        where: { id: req.params.id }
+      });
+      const dish = await db.Dish.findOne({
+        where: { id: req.params.id2 }
+      });
+      console.log(res);
+      return table.removeDish([dish]);
     } catch (err) {
       console.error(err);
     }

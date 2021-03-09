@@ -24,7 +24,7 @@
                         <h4 class="order{{this.id}} orderTitle" style="display: none;">Order for table: {{this.id}}</h4>
                         <ul class="waiterList order{{this.id}} orderBody" style="display: none;">
                             {{#each tableDish}}
-                            <li class="list-group-item orderedDish ready{{this.dataValues.isReady}}" id="dish"
+                            <li class="list-group-item orderedDish ready{{this.dataValues.isReady}}" id="dish" data-id="{{this.TableDishes.dishId}}"
                                 data-tableId="{{this.TableDishes.tableId}}" data-status="{{this.dataValues.isReady}}">
                                 {{this.dataValues.title}}</li>
                             {{/each}}
