@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded! 🚀");
 
+  ///////////EMPLOYEE section in Manager Page///////////
+
   // delete Employee
   const deleteEmp = document.querySelectorAll(".deleteEmp");
   console.log(deleteEmp);
@@ -17,10 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: {
             "Content-Type": "application/json"
           }
-        }).then(response => {
-          alert(
-            `${response.firstName} ${response.lastName} removed employee successly`
-          );
+        }).then(() => {
+          alert("The employee has been removed successfully!!");
           window.location.replace("/manager");
         });
       });
@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addEmpBtn.addEventListener("click", e => {
       e.preventDefault();
       console.log(addEmpBtn);
-      alert("btn clicked");
       const newEmployee = {
         firstName: $("#firstName")
           .val()
@@ -69,6 +68,40 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(() => {
           alert("Added employee successly");
           window.location.replace("/manager");
+        })
+        .catch(err => console.error(err));
+    });
+  }
+
+  ///////////MENU section in Manager Page///////////
+  //add new dish functionality
+  const addDishBtn = document.getElementById("addDishBtn");
+
+  if (addDishBtn) {
+    addDishBtn.addEventListener("click", e => {
+      e.preventDefault();
+      console.log(addDishBtn);
+      const newDish = {
+        title: $("#title")
+          .val()
+          .trim(),
+        price: $("#price")
+          .val()
+          .trim(),
+        isReady: $("#isReady")
+          .val()
+          .trim()
+      };
+      fetch("/api/newDishes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newDish)
+      })
+        .then(() => {
+          alert("Added dish successfully");
+          window.location.replace("/manager/viewDish");
         })
         .catch(err => console.error(err));
     });

@@ -2,11 +2,12 @@
 const db = require("../models");
 
 module.exports = app => {
+  /////////Employee/////////
+
   //Main page render for view employee
   app.get("/manager", (req, res) => {
     db.Employee.findAll({}).then(response => {
       console.log(response);
-      // res.render("employee", { employee })
       res.render("manager", {
         em: response
       });
@@ -26,11 +27,6 @@ module.exports = app => {
       });
     });
   });
-
-  // Find all employees and return them to the user with res.json
-  // app.get("/api/employees", (req, res) => {
-  //     db.Employee.findAll({}).then(response => res.json(response));
-  // });
 
   //Add new employee
   app.post("/api/employees", (req, res) => {
@@ -71,6 +67,39 @@ module.exports = app => {
       console.log(`Remove employee with id ${emp.employeeId}`);
       res.end();
       // res.json(emp)
+    });
+  });
+
+  /////////Menu/////////
+  //Main page render for view dish
+  app.get("/manager/viewDish", (req, res) => {
+    db.Dish.findAll({}).then(response => {
+      console.log(response);
+      res.render("viewDish", {
+        dishes: response
+      });
+    });
+  });
+
+  //This route will render add employee page if clicked the add new employee button
+  app.get("/manager/newDish", (req, res) => {
+    res.render("addDishForm");
+  });
+
+  //Add new dish api
+  app.post("/api/newDishes", (req, res) => {
+    const { id, title, price, isReady } = req.body;
+
+    const newDish = {
+      id,
+      title,
+      price,
+      isReady
+    };
+    console.log(newDish);
+    db.Dish.create(newDish).then(dishes => {
+      console.log(`Added employee ${dishes.title}`);
+      res.json(dishes);
     });
   });
 };

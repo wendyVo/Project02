@@ -1,0 +1,39 @@
+<article>
+    <div class="wrapper">
+    {{> managerNav }}    
+    <div class="empForm">
+<form id="addEmployee">
+     <h3 class="mt-3">Add New Dish</h3>
+    <div class="form-group row">
+        <!-- Dish Name -->
+        <label for="title" class="col-sm-2 col-form-label">Dish Name</label>
+         <div class="col-sm-10">
+        <input type="text" class="form-control" id="title" name="title">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <!-- Price -->
+        <label for="price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+        <input type="number" class="form-control" placeholder="$" step="0.01" min="0" id="price">
+        </div>
+    </div>
+    <div class="form-group row">
+         <!-- is Ready -->
+      <label for="isReady" class="col-sm-2 col-form-label">isReady</label>
+      <div class="col-sm-10">
+    <select id="isReady" cam-variable-name="APPROVED"
+        cam-variable-type="Boolean">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+      </div>
+    </div>
+      <button type="submit" id="addDishBtn" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+</article>
+
+{{> managerFooter }}
