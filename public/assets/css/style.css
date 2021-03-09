@@ -28,6 +28,20 @@ article {
     color: #000;
 }
 
+.line {
+  background-color: transparent;
+  padding: 20px;
+  padding-left: 0px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-weight: normal;
+}
+
+.line:hover {
+  font-weight: bolder;
+}
+
 .logo {
     font-family: fantasy;
 }
@@ -193,31 +207,24 @@ h1 {
     padding: 40px;
 }
 
-.waiterList {
-    list-style: none;
+
+.List {
+  list-style: none;
+  margin: 20px;
+  margin-top: 40px;
+  padding: 0px;
+  font-size: large;
+  text-align: left;
 }
 
-#dishesList {
-    margin: 20px;
-    margin-top: 40px;
-    padding: 0px;
-    font-size: large;
-    text-align: left;
-}
+/* #dishesList {
+  margin: 20px;
+  margin-top: 40px;
+  padding: 0px;
+  font-size: large;
+  text-align: left;
+} */
 
-#dish {
-    background-color: transparent;
-    padding: 20px;
-    padding-left: 0px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-weight: normal;
-}
-
-#dish:hover {
-    font-weight: bolder;
-}
 
 .readytrue {
     color: orange;
@@ -227,6 +234,7 @@ h1 {
 /* Ingredients Page CSS */
 
 .orderButton {
+    float: right;
     background-color: rgb(207, 202, 202);
     border-radius: 5px;
     margin-left: 20px;
