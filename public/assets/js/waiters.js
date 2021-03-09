@@ -8,16 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderBody = document.querySelectorAll(".orderBody");
   const menuDish = document.querySelectorAll(".menuDish");
   const orderedDish = document.querySelectorAll(".orderedDish");
-  const readyDish = document.querySelectorAll(".readytrue");
 
   let tableId = "";
   let dishBelongsTo = "";
+  let toShow = "";
 
   //Function to hide the dish once it is served -- needs update route
-  readyDish.forEach(dish => {
+  orderedDish.forEach(dish => {
     dish.addEventListener("click", e => {
       e.preventDefault();
       console.log("clicked");
+      const orderedDishId = parseInt(e.target.getAttribute("data-id"));
+      removeDishes(tableId, orderedDishId);
       dish.textContent = "";
     });
   });
@@ -26,22 +28,25 @@ document.addEventListener("DOMContentLoaded", () => {
   tableBtn.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
+      orderTitle.forEach(title => {
+        title.setAttribute("style", "display: none");
+      });
+      orderBody.forEach(item => {
+        item.setAttribute("style", "display: none");
+      });
       console.log("clicked");
       tableId = parseInt(e.target.textContent);
       console.log(tableId);
       for (i = 0; i < orderedDish.length; i++) {
         dishBelongsTo = parseInt(orderedDish[i].getAttribute("data-tableId"));
         if (tableId === dishBelongsTo) {
-          console.log(dishBelongsTo);
-          orderTitle[i].setAttribute("style", "display: block");
-          orderBody[i].setAttribute("style", "display: block");
-        } else {
-          orderTitle[i].setAttribute("style", "display: none");
-          orderBody[i].setAttribute("style", "display: none");
+          toShow = document.querySelectorAll(`.order${tableId}`);
+          toShow.forEach(data => {
+            data.setAttribute("style", "display: block");
+          });
         }
+        getDishes(tableId);
       }
-      // hideShow();
-      getDishes(tableId);
     });
   });
 
@@ -84,14 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   };
 
-  // Function to get all the dishes on the menu
-  // const getDishes = () => {
-  //   fetch("/api/dishes", {
-  //     method: "GET"
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //     });
-  // };
+  // Function to remove a dish
+  const removeDishes = (table, dish) => {
+    fetch(`api/table/${table}/remove-dish/${dish}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      });
+  };
 });
