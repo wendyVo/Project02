@@ -27,7 +27,6 @@ article {
   color: #000;
 }
 
-<<<<<<< HEAD
 .line {
   background-color: transparent;
   padding: 20px;
@@ -40,10 +39,10 @@ article {
 
 .line:hover {
   font-weight: bolder;
-=======
+}
+
 .logo {
     font-family: fantasy;
->>>>>>> 12af25bf8a47ef10770040dcab610abae9c6a912
 }
 
 .signOut {
