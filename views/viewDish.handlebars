@@ -1,0 +1,28 @@
+<article id="managePage">
+    <div class="wrapper">
+    <!-- Sidebar -->
+    {{> managerNav }}
+        <table class="table empTable">
+            <thead class="thead-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Dish Name</th>
+                    <th>Dish Price</th>
+                    <th>isReady</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each dishes}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{title}}</td>
+                        <td>{{price}}</td>
+                        <td>{{isReady}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+</div>
+</article>
+
+{{> managerFooter }}
