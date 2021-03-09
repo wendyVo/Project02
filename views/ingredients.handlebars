@@ -4,9 +4,9 @@
       <div class="col-md-6 tablesLayout">
         <h1> Low Stock</h1>
         <div>
-        <ul class="waiterList" id="dishesList">
+        <ul class="List">
             {{#each lowStock}}
-                <li class="list-group-item dish" data-id="{{id}}">
+                <li class="list-group-item line" data-id="{{id}}">
                     <text>{{name}}</text>
                     <button class="orderButton" data-id="{{id}}">ORDER</button>
                     <text class="quantity">{{quantity}}</text> 
@@ -18,9 +18,9 @@
       <div class="col-md-6 menu">
         <h1>In Stock</h1>
         <div>
-          <ul class="waiterList" id="dishesList">
+          <ul class="List">
             {{#each inStock}}
-                <li class="list-group-item dish" data-id="{{id}}" >
+                <li class="list-group-item line" data-id="{{id}}" >
                     <text>{{name}}</text><text class="quantity">{{quantity}}</text> 
                 </li>
             {{/each}}
