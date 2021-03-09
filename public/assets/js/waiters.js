@@ -6,7 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const tableBtn = document.querySelectorAll(".tableBtn");
   const tableOrder = document.getElementById("tableOrder");
   const menuDish = document.querySelectorAll(".menuDish");
+  const readyDish = document.querySelectorAll(".readytrue");
+
   let tableId = "";
+
+  //Function to hide the dish once it is served -- needs update route
+  readyDish.forEach(dish => {
+    dish.addEventListener("click", e => {
+      e.preventDefault();
+      console.log("clicked");
+      dish.textContent = "";
+    });
+  });
 
   // Make the table buttons clickable
   tableBtn.forEach(button => {
@@ -31,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Funtion to display or hide a table order
+  // Function to display or hide a table order
   const hideShow = () => {
     if (tableOrder.className === "showing") {
       tableOrder.className = "hidden";
@@ -55,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(data);
       });
   };
+
   //Function to order Dishes
   const orderDishes = (table, dish) => {
     fetch(`api/table/${table}/add-dish/${dish}`, {

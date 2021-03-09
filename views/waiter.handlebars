@@ -21,7 +21,7 @@
                         <h5>Order for table: {{this.id}}</h5>
                         <ul class="waiterList">
                             {{#each tableDish}}
-                            <li class="list-group-item orderedDish" id="dish" data-id="{{this.id}}">{{this.dataValues.title}}</li>
+                            <li class="list-group-item orderedDish ready{{this.dataValues.isReady}}" id="dish" data-id="{{this.id}}" data-status="{{this.dataValues.isReady}}">{{this.dataValues.title}}</li>
                             {{/each}}
                         </ul>
                         {{/if}}
