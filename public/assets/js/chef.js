@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get the html elements from the waiter.handlebar
   const menuDish = document.querySelectorAll(".menuDish");
 
-  // Make the dishes clickable
+  // Make the dishes clickable to change the status from not ready to ready
   menuDish.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
