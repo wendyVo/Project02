@@ -23,6 +23,23 @@
         </div>
     </div>
 
+    <div class="form-group row">
+        <!-- Email-->
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" name="email">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <!-- Phone Number-->
+        <label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10">
+        <input type="number" class="form-control" id="phone" name="phone">
+        </div>
+    </div>
+
+
      <div class="form-group row">
         <!-- Pin Number -->
         <label for="pinNumber" class="col-sm-2 col-form-label">Pin Number</label>
@@ -37,11 +54,9 @@
       <div class="col-sm-10">
       <select id="position" class="form-control">
         <option selected>Choose...</option>
-        <option>Waiter</option>
-        <option>Chef</option>
-        <option>Kitchen Hand</option>
-        <option>Supervisor</option>
-        <option>Manager</option>
+        <option>waiter</option>
+        <option>chef</option>
+        <option>manager</option>
       </select>
       </div>
     </div>
@@ -54,7 +69,7 @@
         </div>
     </div>
 
-      <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" id="addEmpBtn" class="btn btn-primary">Submit</button>
 </form>
 </div>
 </div>
