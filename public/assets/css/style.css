@@ -175,9 +175,9 @@ h1 {
   background-color: grey;
 }
 
-h5 {
-  float: left;
-  margin-left: 42px;
+.orderTitle {
+  margin: auto;
+  padding: 40px;
 }
 
 .waiterList {

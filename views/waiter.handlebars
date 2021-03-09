@@ -14,18 +14,21 @@
 
                     </div>
 
-                    <div id="tableOrder" class="hidden" style="display: none;">
+                    <div>
 
                         {{#each tables}}
                         {{#if this.id }}
-                        <h5>Order for table: {{this.id}}</h5>
-                        <ul class="waiterList">
+                        <h4 class="order{{this.id}} orderTitle" style="display: none;">Order for table: {{this.id}}</h4>
+                        <ul class="waiterList order{{this.id}} orderBody" style="display: none;">
                             {{#each tableDish}}
-                            <li class="list-group-item orderedDish ready{{this.dataValues.isReady}}" id="dish" data-id="{{this.id}}" data-status="{{this.dataValues.isReady}}">{{this.dataValues.title}}</li>
+                            <li class="list-group-item orderedDish ready{{this.dataValues.isReady}}" id="dish"
+                                data-tableId="{{this.TableDishes.tableId}}" data-status="{{this.dataValues.isReady}}">
+                                {{this.dataValues.title}}</li>
                             {{/each}}
                         </ul>
                         {{/if}}
                         {{/each}}
+
                     </div>
                 </div>
             </div>

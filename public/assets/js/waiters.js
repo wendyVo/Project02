@@ -4,11 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Get the html elements from the waiter.handlebar
   const tableBtn = document.querySelectorAll(".tableBtn");
-  const tableOrder = document.getElementById("tableOrder");
+  const orderTitle = document.querySelectorAll(".orderTitle");
+  const orderBody = document.querySelectorAll(".orderBody");
   const menuDish = document.querySelectorAll(".menuDish");
+  const orderedDish = document.querySelectorAll(".orderedDish");
   const readyDish = document.querySelectorAll(".readytrue");
 
   let tableId = "";
+  let dishBelongsTo = "";
 
   //Function to hide the dish once it is served -- needs update route
   readyDish.forEach(dish => {
@@ -26,7 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("clicked");
       tableId = parseInt(e.target.textContent);
       console.log(tableId);
-      hideShow();
+      for (i = 0; i < orderedDish.length; i++) {
+        dishBelongsTo = parseInt(orderedDish[i].getAttribute("data-tableId"));
+        if (tableId === dishBelongsTo) {
+          console.log(dishBelongsTo);
+          orderTitle[i].setAttribute("style", "display: block");
+          orderBody[i].setAttribute("style", "display: block");
+        } else {
+          orderTitle[i].setAttribute("style", "display: none");
+          orderBody[i].setAttribute("style", "display: none");
+        }
+      }
+      // hideShow();
       getDishes(tableId);
     });
   });
@@ -43,15 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Function to display or hide a table order
-  const hideShow = () => {
-    if (tableOrder.className === "showing") {
-      tableOrder.className = "hidden";
-      tableOrder.setAttribute("style", "display: none");
-    } else if ((tableOrder.className = "hidden")) {
-      tableOrder.className = "showing";
-      tableOrder.setAttribute("style", "display: block");
-    }
-  };
+  // const hideShow = (tableNumber) => {
+  //   if (tableOrder.className === "showing") {
+  //     tableOrder.className = "hidden";
+  //     tableOrder.setAttribute("style", "display: none");
+  //   } else if ((tableOrder.className = "hidden")) {
+  //     tableOrder.className = "showing";
+  //     tableOrder.setAttribute("style", "display: block");
+  //   }
+  // };
 
   //Function to get the dishes ordered by a table
   const getDishes = item => {
