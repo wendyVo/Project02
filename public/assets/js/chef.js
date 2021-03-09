@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded! 🚀");
 
   // Get the html elements from the waiter.handlebar
-  const dish = document.querySelectorAll(".dish");
+  const menuDish = document.querySelectorAll(".menuDish");
 
-  // Make the dishes clickable
-  dish.forEach(button => {
+  // Make the dishes clickable to change the status from not ready to ready
+  menuDish.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
       console.log("clicked");
