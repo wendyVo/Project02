@@ -5,19 +5,27 @@
                 <h1>Tables</h1>
                 <div class="actualTables">
                     <div class="tables" style="display: flex; flex-wrap: wrap;">
-                     
+
                         {{#each tables}}
-                            <div class="table" style="width: {{this.dimension.width}}px; height: {{this.dimension.height}}px"><button type="button" class="btn btn-primary tableBtn tbl1">{{this.id}}</button></div>
+                        <div class="table"
+                            style="width: {{this.dimension.width}}px; height: {{this.dimension.height}}px"><button
+                                type="button" class="btn btn-primary tableBtn tbl1">{{this.id}}</button></div>
                         {{/each}}
-                  
+
                     </div>
-                    <div id="tableOrder" class="hidden">
+
+                    <div id="tableOrder" class="hidden" style="display: none;">
+
+                        {{#each tables}}
+                        {{#if this.id }}
                         <h5>Order for table: {{this.id}}</h5>
                         <ul class="waiterList">
-                            {{#each dishesOrdered}}
-                            <li class="list-group-item dish" data-id="{{id}}">{{title}} {{price}}</li>
+                            {{#each tableDish}}
+                            <li class="list-group-item orderedDish" id="dish" <!-- data-id="{{this.id}}"--> {{this.dataValues.title}}</li>
                             {{/each}}
                         </ul>
+                        {{/if}}
+                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -28,9 +36,8 @@
                 <div>
                     <ul class="waiterList" id="dishesList">
                         {{#each dishes}}
-                        <li class="list-group-item dish" data-id="{{id}}">{{title}} {{price}}</li>
+                        <li class="list-group-item menuDish" id="dish" data-id="{{this.id}}">{{title}} {{price}}</li>
                         {{/each}}
-                        <li class="dish"></li>
                     </ul>
                 </div>
             </div>

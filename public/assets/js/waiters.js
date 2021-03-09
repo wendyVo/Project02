@@ -5,14 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get the html elements from the waiter.handlebar
   const tableBtn = document.querySelectorAll(".tableBtn");
   const tableOrder = document.getElementById("tableOrder");
-  const dish = document.querySelectorAll(".dish");
+  const menuDish = document.querySelectorAll(".menuDish");
+  let tableId = "";
 
   // Make the table buttons clickable
   tableBtn.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
       console.log("clicked");
-      const tableId = parseInt(e.target.textContent);
+      tableId = parseInt(e.target.textContent);
       console.log(tableId);
       hideShow();
       getDishes(tableId);
@@ -20,12 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Make the dishes clickable
-  dish.forEach(button => {
+  menuDish.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
       console.log("clicked");
       const dishId = parseInt(e.target.getAttribute("data-id"));
       console.log(dishId);
+      orderDishes(tableId, dishId);
     });
   });
 
@@ -40,8 +42,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  //Function to get the dishes ordered by a table
   const getDishes = item => {
     fetch(`/waiter/table/Order/${item}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      });
+  };
+  //Function to order Dishes
+  const orderDishes = (table, dish) => {
+    fetch(`api/table/${table}/add-dish/${dish}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -63,6 +79,4 @@ document.addEventListener("DOMContentLoaded", () => {
   //       console.log(data);
   //     });
   // };
-
-  // Function to order a dish for a table
 });

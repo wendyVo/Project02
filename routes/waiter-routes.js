@@ -1,23 +1,51 @@
 const db = require("../models");
 
-module.exports = app => {
+module.exports = (app) => {
+  // app.get("/waiter", async (req, res) => {
+  //   try {
+  //     const dishes = await db.Dish.findAll();
+  //     const tables = await db.RestaurantTable.findAll();
+  //     const parsedTables = tables.map(table => {
+  //       const [width, height] = table.dataValues.dimension.split("x");
+  //       const id = table.dataValues.id;
+  //       return {
+  //         dimension: {
+  //           width,
+  //           height
+  //         },
+  //         id
+  //       };
+  //     });
+  //     console.log(dishes);
+  //     console.log(parsedTables);
+  //     res.render("waiter", { dishes, tables: parsedTables });
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // });
+
   app.get("/waiter", async (req, res) => {
     try {
       const dishes = await db.Dish.findAll();
-      const tables = await db.RestaurantTable.findAll();
-      const parsedTables = tables.map(table => {
+      const tables = await db.RestaurantTable.findAll({
+        include: [{ model: db.Dish, as: "dishes" }],
+      });
+      const parsedTables = tables.map((table) => {
         const [width, height] = table.dataValues.dimension.split("x");
         const id = table.dataValues.id;
+        const tableDish = table.dataValues.dishes;
         return {
           dimension: {
             width,
-            height
+            height,
           },
-          id
+          id,
+          tableDish,
         };
       });
       console.log(dishes);
       console.log(parsedTables);
+      console.log(parsedTables[0].tableDish[0].dataValues.title);
       res.render("waiter", { dishes, tables: parsedTables });
     } catch (err) {
       console.error(err);
@@ -26,11 +54,11 @@ module.exports = app => {
 
   app.get("/api/dishes", (req, res) => {
     db.Dish.findAll()
-      .then(response => {
+      .then((response) => {
         console.log(response);
         return res.json(response);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         return res.json(err);
       });
@@ -39,44 +67,25 @@ module.exports = app => {
   app.get("/waiter/table/Order/:id", (req, res) => {
     db.RestaurantTable.findAll({
       where: {
-        id: req.params.id
+        id: req.params.id,
       },
-      include: [{ model: db.Dish, as: "dishes" }]
+      include: [{ model: db.Dish, as: "dishes" }],
     })
-      .then(response => res.json(response))
-      .catch(err => {
+      .then((response) => res.json(response))
+      .catch((err) => {
         console.error(err);
       });
   });
 
-  // app.post("/api/table/:id/add-dish", (req, res) => {
-  //   // get table record
-  //   db.Table.findOne({
-  //     where: { id: req.params.id }
-  //   }).then(table => {
-  //     const dish = db.Dish.findOne({
-  //       where: { id: req.body.id }
-  //     });
-  //     table.setDishes([dish]);
-  //     console.log(`This ${dish} belongs to this ${table}`);
-  //   });
-  //   // db.Table.setDishes();
-  //   return console.log(res);
-  // });
-
   app.get("/api/table/:id/add-dish/:id2", async (req, res) => {
     try {
       const table = await db.RestaurantTable.findOne({
-        where: { id: req.params.id }
+        where: { id: req.params.id },
       });
       const dish = await db.Dish.findOne({
-        where: { id: req.params.id2 }
+        where: { id: req.params.id2 },
       });
-      const name = dish.dataValues.title;
-      const cus = table.dataValues.numCustomers;
-      console.log(name);
-      console.log(cus);
-      res.json(name); //to prevent lint
+      console.log(res);
       return table.setDishes([dish]);
     } catch (err) {
       console.error(err);
@@ -85,11 +94,11 @@ module.exports = app => {
 
   app.get("/api/tables", (req, res) => {
     db.RestaurantTable.findAll()
-      .then(response => {
+      .then((response) => {
         console.log(response);
         return res.json(response);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         return res.json(err);
       });

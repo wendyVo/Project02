@@ -12,7 +12,7 @@ INSERT INTO restaurant_db.RestaurantTables (numCustomers, isavailable, dimension
 INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("SESAME PEANUT SICHUAN NOODLE", 16, 0, '9999-12-31 23:59:59', '9999-12-31 23:59:59');
 INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("TURMERIC FRIED CHICKEN", 16, 0, '9999-12-31 23:59:59', '9999-12-31 23:59:59');
 INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("TUNA SASHIMI", 22, 0, '9999-12-31 23:59:59', '9999-12-31 23:59:59');
-INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("TEMPURA PRAWN BETEL LEAF", 0, 16, '9999-12-31 23:59:59', '9999-12-31 23:59:59');
+INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("TEMPURA PRAWN BETEL LEAF", 16, 0, '9999-12-31 23:59:59', '9999-12-31 23:59:59');
 INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("MOHOR TOFU BETEL LEAF", 6, 0, '9999-12-31 23:59:59', '9999-12-31 23:59:59');
 INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("FRESHLY SHUCKED OYSTERS", 5, 0,'9999-12-31 23:59:59', '9999-12-31 23:59:59');
 INSERT INTO restaurant_db.Dishes (title, price, isReady, createdAt, updatedAt) VALUES ("KINGFISH SASHIMI", 22, 0, '9999-12-31 23:59:59', '9999-12-31 23:59:59');

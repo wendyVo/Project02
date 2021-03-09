@@ -4,15 +4,19 @@
       <div class="col-md-6 tablesLayout">
         <h1> To be prepared</h1>
         <div>
-        <ul class="waiterList" id="dishesList">
+          <ul class="waiterList" id="dishesList">
 
             {{#each dishes}}
-            {{!-- {{#if isReady}} --}}
-            <li class="list-group-item dish" data-id="{{id}}" data-status={{isReady}}>{{title}}</li>
-            {{!-- {{/if}} --}}
+            {{#unless isReady}}
+            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:block">{{title}}
+            </li>
+            {{else}}
+            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:none">{{title}}
+            </li>
+            {{/unless}}
             {{/each}}
 
-         </ul>
+          </ul>
         </div>
       </div>
 
@@ -21,11 +25,17 @@
         <h1>Ready</h1>
         <div>
           <ul class="waiterList" id="dishesList">
-            {{!-- {{#else}}
-            {{#each dishes}} --}}
-            {{!-- <li class="list-group-item dish" data-id="{{id}}">{{title}}</li> --}}
-            {{!-- {{/each}}
-            {{/else}} --}}
+
+            {{#each dishes}}
+            {{#if isReady}}
+            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:block">{{title}}
+            </li>
+            {{else}}
+            <li class="list-group-item" id="dish" data-id="{{id}}" data-status={{isReady}} style="display:none">{{title}}
+            </li>
+            {{/if}}
+            {{/each}}
+
           </ul>
         </div>
       </div>

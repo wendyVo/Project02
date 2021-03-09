@@ -195,16 +195,17 @@ h5 {
     text-align: left;
 }
 
-.dish {
+#dish {
     background-color: transparent;
     padding: 20px;
     padding-left: 0px;
     border-top: none;
     border-left: none;
     border-right: none;
+    font-weight:normal;
 }
 
-.dish:hover {
+#dish:hover {
     font-weight: bolder;
 }
 
