@@ -20,8 +20,6 @@ module.exports = app => {
           tableDish
         };
       });
-      console.log(parsedTables);
-      console.log(parsedTables[0].tableDish[0].dataValues.title);
       res.render("chef", { tables: parsedTables });
     } catch (err) {
       console.error(err);
