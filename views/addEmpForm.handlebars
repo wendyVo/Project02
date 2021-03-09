@@ -1,8 +1,8 @@
 <!-- This handlebars is used to add new employee Form in Manager page -->
+
 <article>
     <div class="wrapper">
     {{> managerNav }}    
-   
     <div class="empForm">
 <form id="addEmployee">
      <h3 class="mt-3">Add New Employee</h3>
@@ -64,10 +64,10 @@
         <!-- Manager Id -->
         <label for="managerId" class="col-sm-2 col-form-label">Manager Id</label>
         <div class="col-sm-10">
-        <input type="number" class="form-control" id="managerId" name="managerId" placeholder="Leave null if not manager">
+        <input type="text" class="form-control" id="managerId" name="managerId" placeholder="Leave null if not manager">
         </div>
     </div>
-      <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" id="addEmpBtn" class="btn btn-primary">Submit</button>
 </form>
 </div>
 </div>
