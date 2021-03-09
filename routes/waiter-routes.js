@@ -1,23 +1,51 @@
 const db = require("../models");
 
 module.exports = app => {
+  // app.get("/waiter", async (req, res) => {
+  //   try {
+  //     const dishes = await db.Dish.findAll();
+  //     const tables = await db.RestaurantTable.findAll();
+  //     const parsedTables = tables.map(table => {
+  //       const [width, height] = table.dataValues.dimension.split("x");
+  //       const id = table.dataValues.id;
+  //       return {
+  //         dimension: {
+  //           width,
+  //           height
+  //         },
+  //         id
+  //       };
+  //     });
+  //     console.log(dishes);
+  //     console.log(parsedTables);
+  //     res.render("waiter", { dishes, tables: parsedTables });
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // });
+
   app.get("/waiter", async (req, res) => {
     try {
       const dishes = await db.Dish.findAll();
-      const tables = await db.RestaurantTable.findAll();
+      const tables = await db.RestaurantTable.findAll({
+        include: [{ model: db.Dish, as: "dishes" }]
+      });
       const parsedTables = tables.map(table => {
         const [width, height] = table.dataValues.dimension.split("x");
         const id = table.dataValues.id;
+        const tableDish = table.dataValues.dishes;
         return {
           dimension: {
             width,
             height
           },
-          id
+          id,
+          tableDish
         };
       });
       console.log(dishes);
       console.log(parsedTables);
+      console.log(parsedTables[0].tableDish[0].dataValues.title);
       res.render("waiter", { dishes, tables: parsedTables });
     } catch (err) {
       console.error(err);
@@ -49,18 +77,20 @@ module.exports = app => {
       });
   });
 
-  // app.post("/api/table/:id/add-dish", (req, res) => {
-  //   // get table record
-  //   db.Table.findOne({ id: req.params.id }).then(async table => {
-  //     const dish = await db.Dish.findOne({ id: req.body.dish_id });
-
-  //     table.setDishes([dish]);
-  //   });
-
-  // get dish record
-
-  //   db.Table.setDishes();
-  // });
+  app.get("/api/table/:id/add-dish/:id2", async (req, res) => {
+    try {
+      const table = await db.RestaurantTable.findOne({
+        where: { id: req.params.id }
+      });
+      const dish = await db.Dish.findOne({
+        where: { id: req.params.id2 }
+      });
+      console.log(res);
+      return table.setDishes([dish]);
+    } catch (err) {
+      console.error(err);
+    }
+  });
 
   app.get("/api/tables", (req, res) => {
     db.RestaurantTable.findAll()
