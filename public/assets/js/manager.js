@@ -106,4 +106,28 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error(err));
     });
   }
+
+  // delete Dish
+  const deleteDish = document.querySelectorAll(".deleteDish");
+  console.log(deleteDish);
+  if (deleteDish) {
+    deleteDish.forEach(dishes => {
+      dishes.addEventListener("click", e => {
+        e.preventDefault();
+        console.log("clicked");
+        const id = dishes.getAttribute("data-id");
+        console.log(id);
+
+        fetch(`/api/dish/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }).then(() => {
+          alert("The dish has been removed successfully!!");
+          window.location.replace("/manager/viewDish");
+        });
+      });
+    });
+  }
 });

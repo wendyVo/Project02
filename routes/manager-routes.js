@@ -56,8 +56,8 @@ module.exports = app => {
     });
   });
 
+  // Delete the Employee with the id available to us in req.params.id
   app.delete("/api/employees/:employeeId", (req, res) => {
-    // Delete the Employee with the id available to us in req.params.id
     db.Employee.destroy({
       where: {
         employeeId: req.params.employeeId
@@ -86,6 +86,15 @@ module.exports = app => {
     res.render("addDishForm");
   });
 
+  //html route to render to delete dish
+  app.get("/manager/deleteDish", (req, res) => {
+    db.Dish.findAll({}).then(response => {
+      res.render("deleteDish", {
+        dishes: response
+      });
+    });
+  });
+
   //Add new dish api
   app.post("/api/newDishes", (req, res) => {
     const { id, title, price, isReady } = req.body;
@@ -100,6 +109,19 @@ module.exports = app => {
     db.Dish.create(newDish).then(dishes => {
       console.log(`Added employee ${dishes.title}`);
       res.json(dishes);
+    });
+  });
+
+  //Delete Dish
+  app.delete("/api/dish/:id", (req, res) => {
+    db.Dish.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dishes => {
+      //Remove dish with id
+      console.log(`Remove employee with id ${dishes.id}`);
+      res.end();
     });
   });
 };
