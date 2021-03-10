@@ -26,6 +26,25 @@ module.exports = app => {
     }
   });
 
+  app.get("/chef/readyDishes", async (req, res) => {
+    try {
+      const tables = await db.RestaurantTable.findAll({
+        include: [{ model: db.Dish, as: "dishes" }]
+      });
+      const parsedTables = tables.map(table => {
+        const id = table.dataValues.id;
+        const tableDish = table.dataValues.dishes;
+        return {
+          id,
+          tableDish
+        };
+      });
+      res.render("chef", { tables: parsedTables });
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
   //   app.put("/api/dishes/:id", (req, res) => {
   //     db.Dish.update(
   //       { isReady: req.body.isReady },
