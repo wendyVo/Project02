@@ -81,7 +81,7 @@ module.exports = app => {
     });
   });
 
-  //This route will render add employee page if clicked the add new employee button
+  //This route will render add dish page if clicked
   app.get("/manager/newDish", (req, res) => {
     res.render("addDishForm");
   });
@@ -122,6 +122,40 @@ module.exports = app => {
       //Remove dish with id
       console.log(`Remove employee with id ${dishes.id}`);
       res.end();
+    });
+  });
+
+  /////////Ingredients/////////
+
+  //Main page render for view Ingredients
+  app.get("/manager/viewIngredient", (req, res) => {
+    db.Ingredient.findAll({}).then(response => {
+      console.log(response);
+      res.render("viewIngredient", {
+        ing: response
+      });
+    });
+  });
+
+  //This route will render add ingredient page if clicked
+  app.get("/manager/addIngredients", (req, res) => {
+    res.render("addIngredientForm");
+  });
+
+  //Add new ingredient api
+  app.post("/api/newIngredients", (req, res) => {
+    const { id, name, quantity, minimumQuantity } = req.body;
+
+    const newIngredient = {
+      id,
+      name,
+      quantity,
+      minimumQuantity
+    };
+    console.log(newIngredient);
+    db.Ingredient.create(newIngredient).then(ing => {
+      console.log(`Added ingredient ${ing.name}`);
+      res.json(ing);
     });
   });
 };

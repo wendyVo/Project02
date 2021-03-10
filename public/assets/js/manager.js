@@ -130,4 +130,37 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+  ///////////INGREDIENT section in Manager Page///////////
+  //add new dish functionality
+  const addIngredientBtn = document.getElementById("addIngredientBtn");
+
+  if (addIngredientBtn) {
+    addIngredientBtn.addEventListener("click", e => {
+      e.preventDefault();
+      console.log(addIngredientBtn);
+      const newIngredient = {
+        name: $("#name")
+          .val()
+          .trim(),
+        quantity: $("#quantity")
+          .val()
+          .trim(),
+        minimumQuantity: $("#minimumQuantity")
+          .val()
+          .trim()
+      };
+      fetch("/api/newIngredients", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newIngredient)
+      })
+        .then(() => {
+          alert("Added ingredient successfully");
+          window.location.replace("/manager/viewIngredient");
+        })
+        .catch(err => console.error(err));
+    });
+  }
 });
