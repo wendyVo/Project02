@@ -1,76 +1,79 @@
 <!-- This handlebars is used to add new employee Form in Manager page -->
-  {{>managerHeader}}
+{{>managerHeader}}
 <article>
-    {{!-- <div class="wrapper"> --}}
-    {{> managerNav }}    
-    <div class="empForm">
-<form id="addEmployee">
-     <h3 class="mt-3">Add New Employee</h3>
-    <div class="form-group row">
-        <!-- First Name -->
-        <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
-         <div class="col-sm-10">
-        <input type="text" class="form-control" id="firstName" name="firstName">
-        </div>
-    </div>
+    {{> managerNav }}
+    <div class="container containerWaiter containerManager">
+        <div class="row waiterRow managerRow">
+                <div class="col-12 empForm">
+                    <form id="addEmployee">
+                        <h3 class="mt-3">Add New Employee</h3>
+                        <div class="form-group row">
+                            <!-- First Name -->
+                            <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="firstName" name="firstName">
+                            </div>
+                        </div>
 
-    <div class="form-group row">
-        <!-- Last Name -->
-        <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" id="lastName" name="lastName">
-        </div>
-    </div>
+                        <div class="form-group row">
+                            <!-- Last Name -->
+                            <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="lastName" name="lastName">
+                            </div>
+                        </div>
 
-    <div class="form-group row">
-        <!-- Email-->
-        <label for="email" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" name="email">
-        </div>
-    </div>
+                        <div class="form-group row">
+                            <!-- Email-->
+                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" name="email">
+                            </div>
+                        </div>
 
-    <div class="form-group row">
-        <!-- Phone Number-->
-        <label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
-        <div class="col-sm-10">
-        <input type="tel" class="form-control" id="phone" name="phone">
-        </div>
-    </div>
+                        <div class="form-group row">
+                            <!-- Phone Number-->
+                            <label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
+                            <div class="col-sm-10">
+                                <input type="tel" class="form-control" id="phone" name="phone">
+                            </div>
+                        </div>
 
 
-     <div class="form-group row">
-        <!-- Pin Number -->
-        <label for="pinNumber" class="col-sm-2 col-form-label">Pin Number</label>
-        <div class="col-sm-10">
-        <input type="number" class="form-control" id="pinNumber" name="pinNumber">
-        </div>
-    </div>
+                        <div class="form-group row">
+                            <!-- Pin Number -->
+                            <label for="pinNumber" class="col-sm-2 col-form-label">Pin Number</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="pinNumber" name="pinNumber">
+                            </div>
+                        </div>
 
-    <div class="form-group row">
-         <!-- Position -->
-      <label for="position" class="col-sm-2 col-form-label">Position</label>
-      <div class="col-sm-10">
-      <select id="position" class="form-control">
-        <option selected>Choose...</option>
-        <option>waiter</option>
-        <option>chef</option>
-        <option>manager</option>
-      </select>
-      </div>
-    </div>
+                        <div class="form-group row">
+                            <!-- Position -->
+                            <label for="position" class="col-sm-2 col-form-label">Position</label>
+                            <div class="col-sm-10">
+                                <select id="position" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>waiter</option>
+                                    <option>chef</option>
+                                    <option>manager</option>
+                                </select>
+                            </div>
+                        </div>
 
-    <div class="form-group row">
-        <!-- Manager Id -->
-        <label for="managerId" class="col-sm-2 col-form-label">Manager Id</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" id="managerId" name="managerId" placeholder="Leave null if not manager">
-        </div>
+                        <div class="form-group row">
+                            <!-- Manager Id -->
+                            <label for="managerId" class="col-sm-2 col-form-label">Manager Id</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="managerId" name="managerId"
+                                    placeholder="Leave null if not manager">
+                            </div>
+                        </div>
+                        <button type="submit" id="addEmpBtn" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
     </div>
-      <button type="submit" id="addEmpBtn" class="btn btn-primary">Submit</button>
-</form>
-</div>
-{{!-- </div> --}}
 </article>
 
 {{> managerFooter }}

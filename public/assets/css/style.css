@@ -394,6 +394,7 @@ th {
   width: 60%;
   height: 75%;
   margin: 20px;
+  margin-top: 85px;
   margin-left: 10%;
   background-color: rgb(206, 203, 203);
   opacity: 0.95;
@@ -422,13 +423,13 @@ th {
     margin-left: auto;
   }
 
-  .empTable {
+  .empTable .empForm {
     margin: auto;
     margin-top: 40px;
   }
 
   .empForm {
-    width: 100%;got
+    width: 80%;
   }
   #content span {
     display: none;
