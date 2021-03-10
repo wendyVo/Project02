@@ -16,15 +16,16 @@ app.use(express.json());
 const Handlebars = require("handlebars");
 const exphbs = require("express-handlebars");
 const {
-  allowInsecurePrototypeAccess
+    allowInsecurePrototypeAccess
 } = require("@handlebars/allow-prototype-access");
 
+app.set('views', path.join(__dirname, './views'));
 app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main",
-    handlebars: allowInsecurePrototypeAccess(Handlebars)
-  })
+    "handlebars",
+    exphbs({
+        defaultLayout: "main",
+        handlebars: allowInsecurePrototypeAccess(Handlebars)
+    })
 );
 app.set("view engine", "handlebars");
 
@@ -45,8 +46,8 @@ chefRoutes(app);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
+    app.listen(PORT, () => {
+        // Log (server-side) when our server has started
+        console.log("Server listening on: http://localhost:" + PORT);
+    });
 });
