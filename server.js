@@ -19,6 +19,7 @@ const {
   allowInsecurePrototypeAccess
 } = require("@handlebars/allow-prototype-access");
 
+app.set("views", path.join(__dirname, "./views"));
 app.engine(
   "handlebars",
   exphbs({
