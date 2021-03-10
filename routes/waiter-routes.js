@@ -12,6 +12,7 @@ module.exports = app => {
       const parsedTables = tables.map(table => {
         const [width, height] = table.dataValues.dimension.split("x");
         const id = table.dataValues.id;
+        const isAvailable = table.dataValues.isAvailable;
         const tableDish = table.dataValues.dishes;
         return {
           dimension: {
@@ -19,6 +20,7 @@ module.exports = app => {
             height
           },
           id,
+          isAvailable,
           tableDish
         };
       });
@@ -93,6 +95,40 @@ module.exports = app => {
       .then(response => {
         console.log(response);
         return res.json(response);
+      })
+      .catch(err => {
+        console.log(err);
+        return res.json(err);
+      });
+  });
+
+  // Route to update the table availability to false
+  app.put("/api/table/not-available/:id", (req, res) => {
+    db.RestaurantTable.update(
+      { isAvailable: false },
+      {
+        where: { id: req.params.id }
+      }
+    )
+      .then(() => {
+        res.sendStatus(200);
+      })
+      .catch(err => {
+        console.log(err);
+        return res.json(err);
+      });
+  });
+
+  // Route to update the table availability to true
+  app.put("/api/table/available/:id", (req, res) => {
+    db.RestaurantTable.update(
+      { isAvailable: true },
+      {
+        where: { id: req.params.id }
+      }
+    )
+      .then(() => {
+        res.sendStatus(200);
       })
       .catch(err => {
         console.log(err);

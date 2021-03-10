@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderBody = document.querySelectorAll(".orderBody");
   const menuDish = document.querySelectorAll(".menuDish");
   const orderedDish = document.querySelectorAll(".orderedDish");
+  const tables = document.querySelectorAll(".table");
 
   let tableId = "";
   let dishBelongsTo = "";
@@ -50,6 +51,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  //Function to hide the dish once it is served -- needs update route
+  tables.forEach(table => {
+    table.addEventListener("click", e => {
+      e.preventDefault();
+      console.log("clicked");
+      const tableToUpdateId = parseInt(e.target.getAttribute("data-id"));
+      console.log(tableToUpdateId);
+      console.log(e.target.className);
+      const dataToUpdate = {
+        id: tableToUpdateId,
+        isAvailable: false,
+        updatedAt: "9999-12-31 23:59:59"
+      };
+      if (e.target.className === "table availabletrue") {
+        tableTaken(tableToUpdateId, dataToUpdate);
+      } else {
+        tableFree(tableToUpdateId, dataToUpdate);
+      }
+    });
+  });
   // Make the dishes clickable to order a dish
   menuDish.forEach(button => {
     button.addEventListener("click", e => {
@@ -68,11 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
       headers: {
         "Content-Type": "application/json"
       }
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      });
+    }).then(response => response.json());
   };
 
   //Function to order Dishes
@@ -82,11 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       headers: {
         "Content-Type": "application/json"
       }
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      });
+    }).then(response => response.json());
   };
 
   // Function to remove a dish
@@ -101,5 +114,41 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         console.log(data);
       });
+  };
+
+  // Function to show that the table is not available
+  const tableTaken = (id, availability) => {
+    fetch(`/api/table/not-available/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(availability)
+    }).then(response => {
+      if (response.ok) {
+        console.log(`table ${id} is taken`);
+        // window.location.replace("/waiter");
+      } else {
+        alert("something went wrong!");
+      }
+    });
+  };
+
+  // Function to show the table is available
+  const tableFree = (id, availability) => {
+    fetch(`/api/table/available/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(availability)
+    }).then(response => {
+      if (response.ok) {
+        console.log(`table ${id} is available`);
+        // window.location.replace("/waiter");
+      } else {
+        alert("something went wrong!");
+      }
+    });
   };
 });
