@@ -1,7 +1,7 @@
 <!-- This handlebars is used to add new employee Form in Manager page -->
-  
+  {{>managerHeader}}
 <article>
-    <div class="wrapper">
+    {{!-- <div class="wrapper"> --}}
     {{> managerNav }}    
     <div class="empForm">
 <form id="addEmployee">
@@ -70,7 +70,7 @@
       <button type="submit" id="addEmpBtn" class="btn btn-primary">Submit</button>
 </form>
 </div>
-</div>
+{{!-- </div> --}}
 </article>
 
 {{> managerFooter }}

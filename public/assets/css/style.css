@@ -49,16 +49,13 @@ header {
 
 .logo {
   font-family: fantasy;
+  margin: auto;
 }
 
 .signOut {
   float: right;
 }
-/* 
-#logOut {
-  float: right;
-  margin-top: 1%;
-} */
+
 
 .tables {
   min-width: 100%;
@@ -74,6 +71,7 @@ footer {
   margin-bottom: 0px !important;
   border-bottom-width: 0px !important;
   padding-bottom: 0px !important;
+  height: 65px;
 }
 
 .navbar-text {
@@ -144,6 +142,7 @@ footer {
   max-height: 80%;
   max-width: 80%;
   margin: auto;
+  overflow: scroll;
 }
 
 h1 {
@@ -267,6 +266,7 @@ h1 {
   min-height: 100%;
   top: 0px;
   margin-top: 0px;
+  overflow: scroll;
 }
 
 .sideBarColumn {
@@ -280,8 +280,13 @@ h1 {
 .managerContentColumn {
   padding: 20px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 65px;
+  padding-top: 0px;
+
 }
+/* .positionColumn {
+  z-index: -1;
+} */
 
 a,
 a:hover,
@@ -296,6 +301,7 @@ a:focus {
   color: #000;
   transition: all 0.3s;
   font-size: large;
+  height: 100%;
 }
 
 #sidebar .sidebar-header {
@@ -369,16 +375,19 @@ a[data-toggle="collapse"] {
 #sidebarCollapse {
   background-color: orange;
   border-color: orange;
-  margin: 0px;
+  margin-left:30px;
+  position: absolute;
+  left: 30px;
+  top: 15px;
 }
 
 .empTable {
-  margin: 20%;
-  margin-left: 10%;
-  margin-top: 20px;
+  margin-left: 200px;
+  margin-top: 40px;
   background-color: #eee;
   font-size: large;
   max-width: 80%;
+  /* display: none; */
 }
 
 th {
@@ -408,16 +417,29 @@ th {
 }
 
 /* Media queries */
+@media (max-width: 1200px) {
+  .empTable {
+    margin: 100px;
+  }
+
+
 @media (max-width: 768px) {
   #sidebar {
     margin-left: -250px;
   }
+
+  .empTable {
+    margin: auto;
+    margin-top: 20px;
+  }
+
   .empForm {
     width: 100%;
   }
   #content span {
     display: none;
   }
+
   #sidebar.active {
     margin-left: 0;
   }

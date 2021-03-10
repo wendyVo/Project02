@@ -1,40 +1,40 @@
-<article id="managerPage">
-    {{!-- <div class="wrapper"> --}}
-        <!-- Sidebar -->
-        <div class="container containerWaiter containerManager">
-            <div class="row waiterRow managerRow">
-                <div class="col-md-4 sideBarColumn">
-                    {{> managerNav }}
-                </div>
-                <div class="col-md-8 managerContentColumn">
-                    {{> toggle}}
-                    <table class="table empTable">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Pin Number</th>
-                                <th>Position</th>
-                                <th>Manager Id</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{#each em}}
-                            <tr>
-                                <td>{{firstName}}</td>
-                                <td>{{lastName}}</td>
-                                <td>{{pinNumber}}</td>
-                                <td>{{position}}</td>
-                                <td>{{managerId}}</td>
-                            </tr>
-                            {{/each}}
-                        </tbody>
-                    </table>
-                </div>
+{{> managerHeader}}
+<article>
+    <!-- Sidebar -->
+    {{> managerNav }}
+    <div class="container containerWaiter containerManager">
+        <div class="row waiterRow managerRow">
+            <div class="col-md-2 sideBarColumn positionColumn">
+            </div>
+            <div class="col-12 col-md-8 managerContentColumn">
+                <table class="table empTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Pin Number</th>
+                            <th>Position</th>
+                            <th>Manager Id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each em}}
+                        <tr>
+                            <td>{{firstName}}</td>
+                            <td>{{lastName}}</td>
+                            <td>{{pinNumber}}</td>
+                            <td>{{position}}</td>
+                            <td>{{managerId}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-2 managerContentColumn positionColumn">
             </div>
         </div>
-        {{!--
-    </div> --}}
+    </div>
+
 </article>
 
 {{> managerFooter }}
