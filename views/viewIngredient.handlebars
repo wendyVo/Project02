@@ -1,0 +1,33 @@
+{{> managerHeader}}
+<article class="managerArticle">
+    <!-- Sidebar -->
+    {{> managerNav }}
+    <div class="container containerWaiter containerManager">
+        <div class="row waiterRow managerRow">
+            <div class="col-12 managerContentColumn">
+                <table class="table empTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>id</th>
+                            <th>Ingredient Name</th>
+                            <th>Quantity</th>
+                            <th>Minimum Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each ing}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{quantity}}</td>
+                            <td>{{minimumQuantity}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</article>
+
+{{> managerFooter }}

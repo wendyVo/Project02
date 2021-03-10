@@ -1,465 +1,478 @@
 html {
-  background: url("../img/oldSchoolResOpa80.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url("../img/oldSchoolResOpa80.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
-  color: #000;
-  font-family: "Roboto", sans-serif;
-  padding-bottom: 50px;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    padding-bottom: 50px;
 }
+
 
 /* Styles shared through all app */
 
 article {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 100%;
-  margin-bottom: 50px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 100%;
+    margin-bottom: 50px;
 }
 
 .managerArticle {
-  width: 80%;
-  height: 80%;
+    width: 80%;
+    height: 80%;
 }
 
 header {
-  background-color: #eee !important;
-  height: 65px !important;
-  margin-bottom: 0;
+    background-color: #eee !important;
+    height: 65px !important;
+    margin-bottom: 0;
 }
 
 .fas {
-  color: #000;
+    color: #000;
 }
 
 .line {
-  background-color: transparent;
-  padding: 20px;
-  padding-left: 0px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  font-weight: normal !important;
+    background-color: transparent;
+    padding: 20px;
+    padding-left: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-weight: normal !important;
 }
 
 .line:hover {
-  font-weight: bolder !important;
+    font-weight: bolder !important;
 }
 
 .logo {
-  font-family: fantasy;
-  margin: auto;
+    font-family: fantasy;
+    margin: auto;
 }
 
 .signOut {
-  float: right;
+    float: right;
 }
 
 .tables {
-  min-width: 100%;
-  min-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 footer {
-  position: fixed !important;
-  bottom: 0px;
-  min-width: 100%;
-  text-align: center;
-  line-height: 30px;
-  margin-bottom: 0px !important;
-  border-bottom-width: 0px !important;
-  padding-bottom: 0px !important;
-  height: 65px;
+    position: fixed !important;
+    bottom: 0px;
+    min-width: 100%;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 0px !important;
+    border-bottom-width: 0px !important;
+    padding-bottom: 0px !important;
+    height: 65px;
 }
 
 .navbar-text {
-  margin: auto;
-  color: #000 !important;
+    margin: auto;
+    color: #000 !important;
 }
+
 
 /* Login.html css */
 
 .containerLogin {
-  height: 100%;
-  text-align: center;
-  display: block;
+    height: 100%;
+    text-align: center;
+    display: block;
 }
 
 .pinBox {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
-  height: 100%;
-  padding: 20%;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    height: 100%;
+    padding: 20%;
 }
 
 .pincode-input-text,
 .form-control.pincode-input-text {
-  text-align: center;
-  float: left;
-  background-color: #eee !important;
-  margin: 5px;
-  width: 50px;
-  height: 50px;
-  color: black;
+    text-align: center;
+    float: left;
+    background-color: #eee !important;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    color: black;
 }
 
 .pincode-input-text-masked {
-  font-family: "Roboto", sans-serif;
-  font-size: xx-large;
+    font-family: "Roboto", sans-serif;
+    font-size: xx-large;
 }
 
 #pinSubmit {
-  background-color: #eee;
-  color: #000;
-  font-family: "Roboto", sans-serif;
-  border-style: none;
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 14px;
-  border-radius: 4px;
+    background-color: #eee;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    border-style: none;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
 }
 
 #pinSubmit:hover {
-  color: white !important;
-  background-color: #000;
+    color: white !important;
+    background-color: #000;
 }
+
 
 /* Waiters page css*/
 
 .containerWaiter {
-  height: 100%;
-  padding-top: 50px;
-  text-align: center;
-  display: block;
+    height: 100%;
+    padding-top: 50px;
+    text-align: center;
+    display: block;
 }
 
 .waiterRow {
-  min-height: 80%;
-  max-height: 80%;
-  max-width: 80%;
-  margin: auto;
-  overflow: scroll;
+    min-height: 80%;
+    max-height: 80%;
+    max-width: 80%;
+    margin: auto;
+    overflow: scroll;
+}
+
+.waiterRow::-webkit-scrollbar {
+    display: none;
 }
 
 h1 {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .tablesLayout,
 .menu {
-  background-color: #eee;
-  margin-top: 40px;
+    background-color: #eee;
+    margin-top: 40px;
 }
 
 .tablesLayout {
-  position: relative;
-  right: 15px;
+    position: relative;
+    right: 15px;
 }
 
 .tables {
-  padding: 20px;
-  justify-content: right;
+    padding: 20px;
+    justify-content: right;
 }
 
 .restaurantTables {
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
+
 .table {
-  margin: auto;
-  margin-bottom: 20px;
-  background: #cacac4;
-  border-radius: 4px;
+    margin: auto;
+    margin-bottom: 20px;
+    background: #cacac4;
+    border-radius: 4px;
 }
 
 .availablefalse {
-  background: orange;
+    background: orange;
 }
 
 .tableBtn {
-  margin-top: 25%;
-  font-family: "Roboto", sans-serif;
-  background-color: #eee;
-  color: black;
-  font-weight: bold;
-  font-size: large;
-  border: none;
-  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
+    margin-top: 25%;
+    font-family: "Roboto", sans-serif;
+    background-color: #eee;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
 }
 
 .tableBtn:hover {
-  margin: 25%;
-  background-color: lightgrey;
+    margin: 25%;
+    background-color: lightgrey;
 }
 
 .tableBtn:active {
-  margin: 25%;
-  background-color: grey;
+    margin: 25%;
+    background-color: grey;
 }
 
 .tableBtn:focus {
-  margin: 25%;
-  background-color: grey;
+    margin: 25%;
+    background-color: grey;
 }
 
 .orderTitle {
-  margin: auto;
-  padding: 40px;
+    margin: auto;
+    padding: 40px;
 }
 
 .List {
-  list-style: none;
-  margin: 20px;
-  margin-top: 40px;
-  padding: 0px;
-  font-size: large;
-  text-align: left;
+    list-style: none;
+    margin: 20px;
+    margin-top: 40px;
+    padding: 0px;
+    font-size: large;
+    text-align: left;
 }
 
 .readytrue {
-  color: orange;
+    color: orange;
 }
+
 
 /* Ingredients Page CSS */
 
 .orderButton {
-  float: right;
-  background-color: rgb(207, 202, 202);
-  border-radius: 5px;
-  margin-left: 20px;
+    float: right;
+    background-color: rgb(207, 202, 202);
+    border-radius: 5px;
+    margin-left: 20px;
 }
 
 .orderButton:hover {
-  background-color: rgb(78, 76, 76);
+    background-color: rgb(78, 76, 76);
 }
 
 .quantity {
-  float: right;
-  background-color: rgb(206, 203, 203);
-  border-radius: 4px;
-  padding: 5px;
+    float: right;
+    background-color: rgb(206, 203, 203);
+    border-radius: 4px;
+    padding: 5px;
 }
 
 .orderButton:hover {
-  background-color: rgb(179, 176, 176);
+    background-color: rgb(179, 176, 176);
 }
 
 .list-group-item {
-  border-radius: 5px;
-  margin: 5px;
-  font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
 }
+
 
 /* Manager Page CSS */
 
 .containerManager {
-  height: 100%;
-  max-width: 60%;
-  padding-top: 0px;
-  text-align: center;
-  display: block;
-  margin-left: 250px;
-  padding: 0px;
+    height: 100%;
+    max-width: 60%;
+    padding-top: 0px;
+    text-align: center;
+    display: block;
+    margin-left: 250px;
+    padding: 0px;
 }
 
 .managerRow {
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  top: 0px;
-  margin-top: 0px;
-  overflow: scroll;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0px;
+    margin-top: 0px;
+    overflow: scroll;
+}
+
+.managerRow::-webkit-scrollbar {
+    display: none;
 }
 
 .sideBarColumn {
-  position: relative;
-  left: 0px;
-  margin-top: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .managerContentColumn {
-  padding: 20px;
-  margin-left: 0;
-  margin-top: 65px;
-  padding-top: 0px;
+    padding: 20px;
+    margin-left: 0;
+    margin-top: 65px;
+    padding-top: 0px;
 }
 
 a,
 a:hover,
 a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
 }
 
 #sidebar {
-  background: #eee;
-  color: #000;
-  transition: all 0.3s;
-  font-size: large;
-  height: 100%;
+    background: #eee;
+    color: #000;
+    transition: all 0.3s;
+    font-size: large;
+    height: 100%;
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
-  background: #eee;
+    padding: 20px;
+    background: #eee;
 }
 
 #sidebar ul.components {
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
 }
 
 #sidebar ul p {
-  color: #000;
-  padding: 10px;
+    color: #000;
+    padding: 10px;
 }
 
 #sidebar ul li a {
-  padding: 10px;
-  font-size: 1.1em;
-  display: block;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
 }
 
 #sidebar ul li a:hover {
-  color: rgb(206, 203, 203);
-  background: #000;
+    color: rgb(206, 203, 203);
+    background: #000;
 }
 
-#sidebar ul li.active > a,
+#sidebar ul li.active>a,
 a[aria-expanded="true"] {
-  color: #000;
-  background: #eee;
+    color: #000;
+    background: #eee;
 }
 
 ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
-  background: rgb(206, 203, 203);
-}
-
-.wrapper {
-  display: flex;
-  width: 70%;
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: rgb(206, 203, 203);
 }
 
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  min-height: 100vh;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
 }
 
 #sidebar.active {
-  margin-left: -250px;
+    margin-left: -250px;
 }
 
 a[data-toggle="collapse"] {
-  position: relative;
+    position: relative;
 }
 
 .dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
 }
+
 .navbar-expand-lg {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 #sidebarCollapse {
-  background-color: orange;
-  border-color: orange;
-  margin-left: 30px;
-  position: absolute;
-  left: 30px;
-  top: 15px;
+    background-color: orange;
+    border-color: orange;
+    margin-left: 30px;
+    position: absolute;
+    left: 30px;
+    top: 15px;
 }
 
 .empTable {
-  margin: auto;
-  margin-top: 40px;
-  background-color: #eee;
-  font-size: large;
-  max-width: 60%;
-  /* display: none; */
+    margin: auto;
+    margin-top: 40px;
+    background-color: #eee;
+    font-size: large;
+    max-width: 60%;
+    /* display: none; */
 }
 
 th {
-  padding: 30px !important;
+    padding: 30px !important;
 }
 
 .empForm {
-  width: 60%;
-  height: 75%;
-  margin: 20px;
-  margin-top: 85px;
-  margin-left: 10%;
-  background-color: rgb(206, 203, 203);
-  opacity: 0.95;
-  border: 2px rgb(156, 154, 154) solid;
-  border-radius: 25px;
-  padding-bottom: 50px;
+    width: 60%;
+    height: 75%;
+    margin: 20px;
+    margin-top: 85px;
+    margin-left: 10%;
+    background-color: rgb(206, 203, 203);
+    opacity: 0.95;
+    border: 2px rgb(156, 154, 154) solid;
+    border-radius: 25px;
+    padding-bottom: 50px;
 }
 
 .form-group {
-  padding: 30px;
-  font-size: 1.1em;
-  font-weight: bold;
+    padding: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 #submit {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
+
 /* Media queries */
+
 @media (min-width: 1400px) {
-  .restaurantTable {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+    .restaurantTable {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 @media (max-width: 768px) {
-  #sidebar {
-    margin-left: -250px;
-  }
-
-  .containerManager {
-    margin-left: auto;
-  }
-
-  .empTable .empForm {
-    margin: auto;
-    margin-top: 40px;
-  }
-
-  .empForm {
-    width: 80%;
-  }
-  #content span {
-    display: none;
-  }
-
-  #sidebar.active {
-    margin-left: 0;
-  }
+    .managerArticle {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    #sidebar {
+        margin-left: -250px;
+    }
+    .containerManager {
+        margin-left: auto;
+    }
+    .empTable .empForm {
+        margin: auto;
+        margin-top: 40px;
+    }
+    .empForm {
+        width: 80%;
+    }
+    #content span {
+        display: none;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 424px) {
-  .pinBox {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
+    .pinBox {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }

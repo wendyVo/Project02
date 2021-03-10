@@ -1,0 +1,37 @@
+{{> managerHeader}}
+<article class="managerArticle">
+  {{> managerNav }}
+  <div class="container containerWaiter containerManager">
+    <div class="row waiterRow managerRow">
+      <div class="col-12 empForm">
+        <form id="addEmployee">
+          <h3 class="mt-3">Add New Ingredient</h3>
+          <div class="form-group row">
+            <!-- Ingredient Name -->
+            <label for="name" class="col-sm-2 col-form-label">Ingredient Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" name="name">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <!-- Quantity -->
+            <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="quantity">
+            </div>
+          </div>
+          <div class="form-group row">
+            <!-- minimumQuantity-->
+            <label for="minimumQuantity" class="col-sm-2 col-form-label">minimumQuantity</label>
+              <div class="col-sm-10">
+              <input type="number" class="form-control" id="minimumQuantity">
+            </div>
+          </div>
+          <button type="submit" id="addIngredientBtn" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</article>
+{{> managerFooter }}
