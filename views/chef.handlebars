@@ -1,10 +1,11 @@
+{{> mainHeader}}
 <article>
   <div class="container containerWaiter">
     <div class="row waiterRow">
       <div class="col-md-6 tablesLayout">
         <h1> To be prepared</h1>
         <div>
-          <ul class="List"">
+          <ul class="List">
 
             {{#each tables}}
             {{#each tableDish}}
@@ -30,18 +31,18 @@
       <div class="col-md-6 menu">
         <h1>Ready</h1>
         <div>
-          <ul class="List"">
+          <ul class="List">
 
             {{#each tables}}
             {{#each tableDish}}
             {{#if this.dataValues.isReady}}
-            <li class="list-group-item" id="dish" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
+            <li class="list-group-item line" id="dish" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
               style="display:block">
               {{this.dataValues.title}}
             </li>
 
             {{else}}
-            <li class="list-group-item" id="dish" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
+            <li class="list-group-item line" id="dish" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
               style="display:none">
               {{this.dataValues.title}}
             </li>

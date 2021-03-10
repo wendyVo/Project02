@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Make the table buttons clickable
+  // Make the table buttons clickable and display the order
   tableBtn.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
