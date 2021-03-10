@@ -16,11 +16,16 @@ body {
 
 article {
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   text-align: center;
   line-height: 100%;
   margin-bottom: 50px;
+}
+
+.managerArticle{
+  width: 80%;
+  height: 80%;
 }
 
 header {
