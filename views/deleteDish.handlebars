@@ -1,0 +1,36 @@
+{{> managerHeader}}
+<article class="managerArticle">
+    <!-- Sidebar -->
+    {{> managerNav }}
+    <div class="container containerWaiter containerManager">
+        <div class="row waiterRow managerRow">
+            <div class="col-12 managerContentColumn">
+
+                <table class="table empTable">
+                    <thead class="thead-dark">
+                        <tr>
+                           <th>id</th>
+                            <th>Dish Name</th>
+                            <th>Dish Price</th>
+                            <th>isReady</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each dishes}}
+                        <tr>
+                           <td>{{id}}</td>
+                            <td>{{title}}</td>
+                            <td>{{price}}</td>
+                            <td>{{isReady}}</td>
+                            <td><button class="btn btn-danger btn-sm rounded-0 deleteDish" type="submit" title="Delete"
+                                    data-id={{id}}><i class="fa fa-trash"></i></button></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</article>
+
+{{> managerFooter }}
