@@ -23,7 +23,7 @@ article {
   margin-bottom: 50px;
 }
 
-.managerArticle{
+.managerArticle {
   width: 80%;
   height: 80%;
 }
@@ -166,8 +166,13 @@ h1 {
 
 .tables {
   padding: 20px;
+  justify-content: right;
 }
 
+.restaurantTables {
+  align-items: center;
+  justify-content: center;
+}
 .table {
   margin: auto;
   margin-bottom: 20px;
@@ -419,6 +424,13 @@ th {
 }
 
 /* Media queries */
+@media (min-width: 1400px) {
+  .restaurantTable {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   #sidebar {
     margin-left: -250px;
