@@ -1,61 +1,30 @@
-{{> mainHeader}}
 <article>
-  <div class="container containerWaiter">
-    <div class="row waiterRow">
-      <div class="col-md-6 tablesLayout">
-        <h1> To be prepared</h1>
-        <div>
-          <ul class="List">
-
-            {{#each tables}}
-            {{#each tableDish}}
-            {{#unless this.dataValues.isReady}}
-            <li class="list-group-item line" data-id="{{this.id}}" data-status="{{this.dataValues.isReady}}"
-              style="display:block">
-              {{this.dataValues.title}}
-            </li>
-
-            {{else}}
-            <li class="list-group-item line" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
-              style="display:none">
-              {{this.dataValues.title}}
-            </li>
-            {{/unless}}
-            {{/each}}
-            {{/each}}
-
-          </ul>
+  <div class="dishes">
+    <h1 style="padding: 20px 0; margin-top:0px; background: white;">Dishes to be prepared and ready</h1>
+    <div class="flex-container">
+      {{!-- Left side --}}
+      <div class="left-side">
+        <h3 style="margin: 15px 0;">Preparing Dishes:</h3>
+        {{#each data.dishes}}
+        <div class="dish-container">
+          <span>#{{this.id}}</span>
+          {{this.title}}
+          <button class="leftSideBtns" data-idOfDish={{this.id}}>Ready</button>
         </div>
+        {{/each}}
       </div>
-
-      <div class="col-md-6 menu">
-        <h1>Ready</h1>
-        <div>
-          <ul class="List">
-
-            {{#each tables}}
-            {{#each tableDish}}
-            {{#if this.dataValues.isReady}}
-            <li class="list-group-item line" id="dish" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
-              style="display:block">
-              {{this.dataValues.title}}
-            </li>
-
-            {{else}}
-            <li class="list-group-item line" id="dish" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
-              style="display:none">
-              {{this.dataValues.title}}
-            </li>
-            {{/if}}
-            {{/each}}
-            {{/each}}
-
-          </ul>
+      {{!-- Right side --}}
+      <div class="right-side">
+        <h3 style="margin: 15px 0;">Ready Dishes:</h3>
+        {{#each data.readyDishes}}
+        <div class="dish-container">
+          <span>#{{this.id}}</span>
+          {{this.title}}
         </div>
+        {{/each}}
       </div>
     </div>
   </div>
-
 </article>
 
-<script type="text/javascript" src="/assets/js/chef.js"></script>
+<script type="text/javascript" src="/assets/js/kitchen.js"></script>
