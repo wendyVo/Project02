@@ -30,8 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       through: "TableDishes",
       as: "dishes",
       foreignKey: "tableId",
-      otherKey: "dishId",
-      status: false
+      otherKey: "dishId"
     });
   };
   return RestaurantTable;

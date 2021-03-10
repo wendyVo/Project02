@@ -8,10 +8,9 @@
                 <div class="actualTables">
 
                     {{!-- Display the tables --}}
-                    <div class="tables" style="display: flex; flex-wrap: wrap;">
-
+                    <div class="restaurantTables tables" style="display: flex; flex-wrap: wrap;">
                         {{#each tables}}
-                        <div class="table available{{this.isAvailable}}" data-id="{{this.id}}"
+                        <div class="table restaurantTable available{{this.isAvailable}}" data-id="{{this.id}}"
                             style="width: {{this.dimension.width}}px; height: {{this.dimension.height}}px">
                             <button type="button" class="btn btn-primary tableBtn tbl1">{{this.id}}</button>
                         </div>

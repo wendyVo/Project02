@@ -10,13 +10,13 @@
             {{#each tables}}
             {{#each tableDish}}
             {{#unless this.dataValues.isReady}}
-            <li class="list-group-item line" data-id="{{this.id}}" data-status="{{this.dataValues.isReady}}"
+            <li class="list-group-item line orderedDish" data-id="{{this.id}}" data-status="{{this.dataValues.isReady}}"
               style="display:block">
               {{this.dataValues.title}}
             </li>
 
             {{else}}
-            <li class="list-group-item line" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
+            <li class="list-group-item line orderedDish" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
               style="display:none">
               {{this.dataValues.title}}
             </li>
@@ -36,13 +36,13 @@
             {{#each tables}}
             {{#each tableDish}}
             {{#if this.dataValues.isReady}}
-            <li class="list-group-item line" id="dish" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
+            <li class="list-group-item line prepadedDish" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
               style="display:block">
               {{this.dataValues.title}}
             </li>
 
             {{else}}
-            <li class="list-group-item line" id="dish" data-id="{{id}}" data-status=="{{this.dataValues.isReady}}"
+            <li class="list-group-item line prepared" data-id="{{this.id}}" data-status=="{{this.dataValues.isReady}}"
               style="display:none">
               {{this.dataValues.title}}
             </li>
