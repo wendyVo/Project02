@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderBody = document.querySelectorAll(".orderBody");
   const menuDish = document.querySelectorAll(".menuDish");
   const orderedDish = document.querySelectorAll(".orderedDish");
-  const tables = document.querySelectorAll(".table");
+  const tables = document.querySelectorAll(".restaurantTable");
 
   let tableId = "";
   let dishBelongsTo = "";
   let toShow = "";
 
-  //Function to hide the dish once it is served -- needs update route
+  //Click to hide the dish once it is served -- needs update route
   orderedDish.forEach(dish => {
     dish.addEventListener("click", e => {
       e.preventDefault();
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Make the table buttons clickable and display the order
+  // Click to display the order
   tableBtn.forEach(button => {
     button.addEventListener("click", e => {
       e.preventDefault();
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  //Function to hide the dish once it is served -- needs update route
+  //Click to show the availability of the table
   tables.forEach(table => {
     table.addEventListener("click", e => {
       e.preventDefault();
@@ -64,13 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
         isAvailable: false,
         updatedAt: "9999-12-31 23:59:59"
       };
-      if (e.target.className === "table availabletrue") {
+      if (e.target.className === "table restaurantTable availabletrue") {
         tableTaken(tableToUpdateId, dataToUpdate);
       } else {
         tableFree(tableToUpdateId, dataToUpdate);
       }
     });
   });
+
   // Make the dishes clickable to order a dish
   menuDish.forEach(button => {
     button.addEventListener("click", e => {

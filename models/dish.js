@@ -34,8 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       through: "TableDishes",
       as: "tables",
       foreignKey: "dishId",
-      otherKey: "tableId",
-      status: false
+      otherKey: "tableId"
     });
   };
   //Table table with Ingredient Table connect "many to many"
