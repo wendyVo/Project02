@@ -25,7 +25,7 @@ module.exports = app => {
     });
   };
 
-  find();
+  // find();
 
   app.get("/ingredients", (req, res) => {
     res.render("ingredients", { inStock, lowStock });
