@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", event => {
   // Get the navbar icons
   const logOutBtn = document.getElementById("logOut");
   const homeBtn = document.getElementById("home");
+  const managerHomeBtn = document.getElementById("managerHome");
 
   // Logout on click
   logOutBtn.addEventListener("click", e => {
@@ -20,5 +21,11 @@ document.addEventListener("DOMContentLoaded", event => {
   homeBtn.addEventListener("click", e => {
     e.preventDefault();
     window.location.replace("/");
+  });
+
+  // Back to manager page on click
+  managerHomeBtn.addEventListener("click", e => {
+    e.preventDefault();
+    window.location.replace("/manager");
   });
 });
