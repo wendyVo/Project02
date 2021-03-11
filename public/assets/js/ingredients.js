@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", event => {
 
   const orderBtn = document.querySelectorAll(".orderButton");
 
-  homeBtn.setAttribute("href", "manager");
-
   // button "order "for all the low stock ingredients
   orderBtn.forEach(button => {
     button.addEventListener("click", e => {
